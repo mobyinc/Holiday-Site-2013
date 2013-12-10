@@ -1,0 +1,37 @@
+<% if @invite %>
+<h1>Happy Holidays <%= @invite.name %>!</h1>
+<% else %>
+<h1>Happy Holidays!</h1>
+<% end %>
+
+<!-- Lightbox Content -->
+<% if @invite %>
+<div id="ornament_creator">
+	<div id="shape_selector">
+		<h3>Pick a Shape</h3>
+		<ul>
+			<li><a href="#" title="Circle" data-shape="circle"><%= image_tag 'http://placehold.it/40x40' %>Circle</a></li>
+			<li><a href="#" title="Drop" data-shape="drop"><%= image_tag 'http://placehold.it/40x40' %>Drop</a></li>
+			<li><a href="#" title="Whale" data-shape="whale"><%= image_tag 'http://placehold.it/40x40' %>Whale</a></li>
+		</ul>
+	</div>
+	<div id="pattern_selector">
+		<h3>Pick a Pattern</h3>
+		<ul>
+			<li><a href="#" title="Cheese" data-pattern="cheese"><%= image_tag 'http://placehold.it/40x40' %>Cheese</a></li>
+			<li><a href="#" title="Cookie" data-pattern="cookie"><%= image_tag 'http://placehold.it/40x40' %>Cookie</a></li>
+			<li><a href="#" title="Metal" data-pattern="metal"><%= image_tag 'http://placehold.it/40x40' %>Metal</a></li>
+			<li><a href="#" title="Peppermint" data-pattern="peppermint"><%= image_tag 'http://placehold.it/40x40' %>Peppermint</a></li>
+		</ul>
+	</div>
+	<div id="decoration_selector">
+		<h3>Pick a Decoration</h3>
+		<ul>
+			<li><a href="#" title="Bow" data-shape="bow"><%= image_tag 'http://placehold.it/40x40' %>Bow</a></li>
+			<li><a href="#" title="Dots" data-shape="dot"><%= image_tag 'http://placehold.it/40x40' %>Dots</a></li>
+			<li><a href="#" title="Happy Holidays" data-shape="metal"><%= image_tag 'http://placehold.it/40x40' %>Metal</a></li>
+			<li><a href="#" title="Peppermint" data-shape="peppermint"><%= image_tag 'http://placehold.it/40x40' %>Peppermint</a></li>
+		</ul>
+	</div>
+</div>
+<% end %>
