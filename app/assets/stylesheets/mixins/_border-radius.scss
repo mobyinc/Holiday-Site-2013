@@ -1,0 +1,8 @@
+// Border Radius
+// =============
+
+@mixin rounded($radius: 0.5em) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	@include oh-behave;
+}

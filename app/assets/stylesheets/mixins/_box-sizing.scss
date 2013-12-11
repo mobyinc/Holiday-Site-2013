@@ -1,0 +1,9 @@
+// Box Sizing
+// ==========
+
+@mixin box-sizing($box:border-box) {
+	//  content-box | border-box | inherit
+	//  content-box = default
+	//  border-box = awesome (width is outsize edge)
+	@include prefixer(box-sizing, $box, webkit moz spec);
+}

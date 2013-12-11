@@ -1,0 +1,234 @@
+/* Elements
+---------------------------------------------------------------------- */
+// Based on HTML5 Boilerplate default styles
+
+  /* Typography
+  ---------------------------------------------------------------------- */
+
+  body {
+  	font: $font-weight-normal #{$base-fs/16*100}%/($base-lh/$base-fs) sans-serif;
+    color: $color-text;
+  }
+
+    /* Font Stacks
+    ---------------------------------------------------------------------- */
+
+    /* Default font stack */
+    body, select, input, textarea, button { font-family: $font-family-default; }
+
+    /* Display font stack */
+    h1,h2,h3 { font-family: $font-family-brand; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-shadow: transparent 0 0 1px;}
+		h4,h5,h6 { font-family: $font-family-brand; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-shadow: transparent 0 0 1px;}
+
+    /* Alternate font stack */
+    blockquote, figcaption { font-family: $font-family-serif;  }
+
+    /* Headings
+    ---------------------------------------------------------------------- */
+
+    h1, h2, h3, h4, h5, h6  { font-style: normal; font-weight: $font-weight-normal; line-height: 1.2em; }
+
+    h1 { font-size: rs(32,14); margin: 0 0 rs(12,28) 0; letter-spacing: -0.03em; text-transform: uppercase;font-weight: $font-weight-light;
+    }
+    h2 { font-size: rs(26,14); margin: rs(24,26) 0 rs(12,26) 0; text-transform: uppercase;}
+    h3 { font-size: rs(24,14); margin: rs(20,22) 0 rs(12,22) 0; }
+    h4 { font-size: rs(22,14); margin: rs(16,18) 0 rs(12,18) 0; }
+    h5 { font-size: rs(18,14); margin: rs(16,16) 0 rs(12,16) 0; }
+    
+    h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child {
+	    margin-top: 0 !important;
+    }
+
+		.brand {
+			color: $color-text-secondary;
+		
+        b {
+	    	font-weight: inherit;
+	    	color: $color-primary;
+    	}
+    }
+    
+    h1, h2, h3, h4, h5, h6  { i {font-family: $font-family-brand; font-style: italic; opacity: 0.75;} }
+
+    /* Links
+    ---------------------------------------------------------------------- */
+    // Declared: link, visited, hover, active
+
+    a {
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+
+    a           { color: $color-link-default; }
+    a:visited   { color: $color-link-visited; }
+    a:hover     { color: $color-link-hover; text-decoration: underline; }
+    a:active    { color: $color-link-active; }
+
+    a:focus { outline: thin dotted; }
+    a:hover, a:active { outline: 0; }
+
+    /* Text Level Elements
+    ---------------------------------------------------------------------- */
+
+    /* Default margins */
+    p, ul, ol, dl { margin: 0 0 rs($base-lh) 0; }
+
+    /* Lists */
+    ul, ol, dl            { padding: 0; }
+    li ul, li ol, dl dl   { margin: 0; }
+    ul li, ol li          { margin: rs(($base-lh)/4) 0 rs(($base-lh)/4) rs($base-lh); }
+    ul li                 { list-style: disc outside; }
+    li ul li              { list-style: circle outside; }
+    ol li                 { list-style: outside decimal; }
+    dl dt                 { font-weight: bold; }
+    dl dd                 { margin: 0 0 rs($base-fs) 0; }
+    li ul, dl dl 					{ font-size: rs(12,12); }
+    
+		.unstyled li {
+			margin: 0 !important;
+			list-style: none !important;
+		}
+
+    nav ul, nav ol, .nav li, .nav ol {
+      list-style: none;
+      list-style-image: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Text Marking */
+    b, strong, mark { font-weight: bold; }
+    dfn, mark { font-style: italic; }
+    ins, mark {
+      color: invert($color-highlight);
+      background-color: $color-highlight;
+    }
+    ins { text-decoration: none; }
+    del { text-decoration: line-through; }
+
+    abbr[title], dfn[title] {
+      cursor: help;
+      border-bottom: 1px dotted;
+    }
+    .initialism {
+      font-size: 90%;
+      text-transform: uppercase;
+    }
+
+    // Position subscript and superscript content without affecting line-height: h5bp.com/k
+    sub, sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    sup { top: -0.5em; }
+    sub { bottom: -0.25em; }
+    
+    // breaks
+    
+    hr {
+    	position: relative;
+			display:block;
+			height:1px;
+			border:0;
+			border-top:1px solid $color-border;
+			margin:2em 0;
+			padding:0;
+			overflow: visible;
+			
+			&[class^="icon-"],
+			&[class*=" icon-"] {
+				margin: 2.25em 0;
+				
+				&:before {
+					position: absolute;
+					left: 50%;
+					font-size: rs(18);
+					color: $color-text-light;
+					margin: -1em 0 0 -1em;
+					padding: 0.5em;
+					background: #fff;
+				}
+			}
+    }
+
+  /* Embeded Content
+  ---------------------------------------------------------------------- */
+
+  /* _width hack is for IE6 and below */
+  img, embed, object, video { max-width: 100%; _width: 100%; }
+  img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+  /* Correct overflow displayed oddly in IE9 */
+  svg:not(:root) { overflow: hidden; }
+
+
+  /* Figures
+  ---------------------------------------------------------------------- */
+
+  figure { margin: 0; }
+
+
+  /* Quotes
+  ---------------------------------------------------------------------- */
+
+  //q { quotes: none; }
+  //q:before, q:after { content: ""; content: none; }
+  q, cite, blockquote { font-style: italic; }
+	
+	/* Boxes
+	---------------------------------------------------------------------- */
+
+	.box {
+		position: relative;
+		z-index: 1;
+		@extend %clearfix;
+		@include box-sizing();
+		margin: $gut auto;
+		padding: $gut;
+		@include rounded(0.5em);
+		@include box-shadow(0,0,0,0);
+		background: white;
+	}
+	
+	/* Full Screen Videos
+	---------------------------------------------------------------------- */
+	
+	#myVideo{
+		position: absolute;
+		z-index: 0 !important;
+		bottom: 0;
+		height: 93.3% !important;
+		width: 100%;
+	}
+	video:-webkit-full-screen { max-height: 100%; }
+	video:-moz-full-screen    { max-height: 100%; }
+		  
+  .desktop #myVideo {
+    height: 100% !important;
+  }
+  
+  .skip,
+  .back {
+	  position: absolute;
+	  z-index: 1;
+	  top:3%;
+	  right: $gut;
+	  padding: 0.2em 0.8em;
+	  
+	  span:before {
+		  font-size: 100%;
+		  margin-right: 0.5em;
+	  }
+  }
+
+  .desktop .skip {
+    display: none;
+  }
+	  
+	.back {
+	  left: $gut;
+	  right: auto;
+  }
+	

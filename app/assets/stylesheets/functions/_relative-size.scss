@@ -1,0 +1,19 @@
+// Relative Size
+// =============
+// Desired font-size in font-size of containing element, or more succinctly:
+// target in context = result
+
+// To use ems, pass in `rem` as the last parameter
+
+@function relative-size( $target, $context: $base-fs, $unit: em ) {
+
+  @return #{$target/$context}$unit;
+
+}
+
+// Short alias
+@function rs( $target, $context: $base-fs, $unit: em ) {
+
+  @return relative-size( $target, $context, $unit );
+
+}

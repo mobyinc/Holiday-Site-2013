@@ -1,0 +1,28 @@
+// Box Shadow
+// ==========
+// @include box-shadow(0, 1px, 2px, 0.4, inset);
+
+@mixin box-shadow($top, $left, $blur, $opacity, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur rgba(0,0,0,$opacity);
+    box-shadow:inset $top $left $blur rgba(0,0,0,$opacity);
+    @include oh-behave;
+  } @else {
+    -webkit-box-shadow: $top $left $blur rgba(0,0,0,$opacity);
+    box-shadow: $top $left $blur rgba(0,0,0,$opacity);
+    @include oh-behave;
+  }
+}
+
+
+@mixin box-shadow-diy($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+    @include oh-behave;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+    @include oh-behave;
+  }
+}
