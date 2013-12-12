@@ -176,59 +176,5 @@
   //q { quotes: none; }
   //q:before, q:after { content: ""; content: none; }
   q, cite, blockquote { font-style: italic; }
-	
-	/* Boxes
-	---------------------------------------------------------------------- */
 
-	.box {
-		position: relative;
-		z-index: 1;
-		@extend %clearfix;
-		@include box-sizing();
-		margin: $gut auto;
-		padding: $gut;
-		@include rounded(0.5em);
-		@include box-shadow(0,0,0,0);
-		background: white;
-	}
-	
-	/* Full Screen Videos
-	---------------------------------------------------------------------- */
-	
-	#myVideo{
-		position: absolute;
-		z-index: 0 !important;
-		bottom: 0;
-		height: 93.3% !important;
-		width: 100%;
-	}
-	video:-webkit-full-screen { max-height: 100%; }
-	video:-moz-full-screen    { max-height: 100%; }
-		  
-  .desktop #myVideo {
-    height: 100% !important;
-  }
-  
-  .skip,
-  .back {
-	  position: absolute;
-	  z-index: 1;
-	  top:3%;
-	  right: $gut;
-	  padding: 0.2em 0.8em;
-	  
-	  span:before {
-		  font-size: 100%;
-		  margin-right: 0.5em;
-	  }
-  }
-
-  .desktop .skip {
-    display: none;
-  }
-	  
-	.back {
-	  left: $gut;
-	  right: auto;
-  }
 	

@@ -73,20 +73,6 @@
 	}
 
 
-// Shadows
-// =======
-	%depth1 { @include box-shadow(0, 1px, 3px, 0.5); }
-	%depth2 { @include box-shadow(0, 3px, 5px, 0.5); }
-	%depth3 { @include box-shadow(0, 4px, 6px, 0.5); }
-	%depth4 { @include box-shadow(0, 5px, 7px, 0.5); }
-	%depth5 { @include box-shadow(0, 6px, 8px, 0.4); }
-	%depth6 { @include box-shadow(0, 7px, 9px, 0.4); }
-	%depth7 { @include box-shadow(0, 8px, 10px, 0.4);}
-	%depth8 { @include box-shadow(0, 9px, 11px, 0.3);}
-	%depth9 { @include box-shadow(0, 10px,12px, 0.3);}
-	%depth10{ @include box-shadow(0, 11px,13px, 0.3);}
-
-
 // Hide elements
 // =============
 	

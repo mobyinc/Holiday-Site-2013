@@ -6,7 +6,7 @@
 
 // @include retina-image(home-icon, 32px 20px)
 
-@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $asset-pipeline: false) {
+@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $asset-pipeline: true) {
   @if $asset-pipeline {
     background-image: image_url($filename + "." + $extension);
   }

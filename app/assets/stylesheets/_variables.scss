@@ -42,7 +42,7 @@
 	// Messages
 	$color-message				: darken(#f4ecbb,30%);
 	$color-success				: green;
-	$color-warning				: orange; // Orange
+	$color-warning				: orange; 	// Orange
 	$color-alert					: #f2ab00; 	// Yellow
 	$color-error					: #d00;			// Red
 	$color-notice					: #66b;			// Purple, huh?
@@ -52,31 +52,21 @@
 // ==========
 // Included shorthands as these may be used a lot.
 
-	$base-font-size				: 14;
+	$base-font-size				: 16;
 	$base-line-height			: 24;
 	$base-fs							: $base-font-size;
 	$base-lh							: $base-line-height;
 	
-	$base-gutter					: 1.714em;	// 24px
+	$base-gutter					: 1.714em;	// 32px
 	$gut									: $base-gutter;
-	$base-site-width-min	: 39.857em;		// 558px
-	$base-site-width-max	: 73.571em;		// 1030px
+	$base-site-width-min	: 20em;			// 320px
+	$base-site-width-max	: 61.25em;	// 980px
 	
 // Breakpoints
 // ===========
 
 	$breakpoint-mid: ($base-site-width-max - $base-site-width-min)/2 + $base-site-width-min;
 	$breakpoint-wide: $base-site-width-max;
-
-
-// OfficinaSans
-// ============
-/* @import must be at top of file, otherwise CSS will not work */
-	@import url("//hello.myfonts.net/count/26b51e");
-	
-	@font-face {font-family: 'OfficinaSansITCStd-Book';src: url('/fonts/26B51E_0_0.eot');src: url('/fonts/26B51E_0_0.eot?#iefix') format('embedded-opentype'),url('/fonts/26B51E_0_0.woff') format('woff'),url('/fonts/26B51E_0_0.ttf') format('truetype');}
-	
-	@font-face {font-family: 'OfficinaSansITCStd-Bold';src: url('/fonts/26B51E_1_0.eot');src: url('/fonts/26B51E_1_0.eot?#iefix') format('embedded-opentype'),url('/fonts/26B51E_1_0.woff') format('woff'),url('/fonts/26B51E_1_0.ttf') format('truetype');}
 
 
 // Fonts
@@ -87,8 +77,10 @@
 	$font-family-display 	: $font-family-sans;
 	$font-family-caption 	: $font-family-serif;
 	$font-family-default 	: $font-family-sans;
-	$font-family-brand 		: "OfficinaSansITCStd-Book", Georgia, Times, "Times New Roman", serif;
-	$font-family-brand-b 	: "OfficinaSansITCStd-Bold", Georgia, Times, "Times New Roman", serif;
+	$font-family-brand 		: $font-family-serif;
+	$font-family-brand-b 	: $font-family-serif;
+	//$font-family-brand 		: "OfficinaSansITCStd-Book", Georgia, Times, "Times New Roman", serif;
+	//$font-family-brand-b 	: "OfficinaSansITCStd-Bold", Georgia, Times, "Times New Roman", serif;
 	
 	$font-weight-light		: 300;
 	$font-weight-normal		: 400;
