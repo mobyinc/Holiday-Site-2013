@@ -12,10 +12,13 @@ audio:not([controls]) { display: none; }
 
 html {
 	height: 100%;
+	width: 100%;
   font-size: 100%;
   @each $prefix in webkit, ms { -#{$prefix}-text-size-adjust: 100%; }
 }
 body {
+	height: 100%;
+	width: 100%;
 	min-height: 100%;
 	margin: 0;
 }

@@ -1,0 +1,57 @@
+/* Basic Tree & Related Elements
+---------------------------------------------------------------------- */
+
+#tree {
+	position: absolute;
+	z-index: 4;
+	bottom:8%;
+	left: 0;
+	width: 100%;
+	height:81%;
+	text-align: center;
+	background: image-url('tree.png') center bottom no-repeat;
+	background-size: auto 100%;
+	
+	h1 {
+		@include box-sizing;
+		position: absolute;
+		display: table;
+		z-index: 0;
+		width: 100%;
+		bottom: 78.5%;
+		height: 9%;
+		font-size: 1em;
+		line-height: 1;
+		color: $color-primary;
+		vertical-align: middle;
+		text-shadow: 0 0.1em 0.8em #000;
+		
+		b {
+			@extend %hide-txt;			
+		}
+		
+		.fittext {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			height: 100%;
+			text-indent: 3.2%;
+			vertical-align: middle;
+		}
+	}
+}
+
+
+// Logo here since it's somewhat related
+// =====================================
+
+#logo {
+	position: absolute;
+	z-index: 3;
+	bottom:81%;
+	left: 0;
+	width: 100%;
+	height: 25%;
+	background: image-url('moby.png') center center no-repeat;
+	background-size: auto 100%;
+}

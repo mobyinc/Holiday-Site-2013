@@ -1,38 +1,82 @@
-/* Layout
+/* Basic Page Structure & Backgrounds
 ---------------------------------------------------------------------- */
-
-	/* Basic Page Structure & Backgrounds
-	---------------------------------------------------------------------- */
 	
-	body {
-		position: relative;
-		min-width: $base-site-width-min;
-		background: #000;
-	}
+body {
+	position: relative;
+	min-width: $base-site-width-min;
+	background: $color-bkgrd-lighter;
+}
 
-		#content {
-			position: relative;
-			z-index: 1;
-			@extend %centered;
-			min-width: $base-site-width-min;
-			max-width: $base-site-width-max;
-			padding: rs(40) 0;
+	#wrapper {
+		@include box-sizing;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		padding-top: $base-site-height-min;
+		background: $color-bkgrd-lighter;
+		//@include linear-gradient($color-bkgrd-lighter, $color-bkgrd);
+		
+		@include respond-min($breakpoint-mid){
+			padding-top: 55%;
+		};
+		
+		@include respond-min($breakpoint-wide){
+			padding-top: 52%;
+		};
+	}
+	
+		#bkgrd_snow {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			height: 25%;
+			max-height: 16.875em;
+			background: image-url('snow.png') center top no-repeat;
+			background-size: 99.75em auto;
+			
+			@include respond-min($breakpoint-wide){
+				background-size: 100% auto;
+			};
+			
+			@media (min-height: $breakpoint-tall) and (max-width:$breakpoint-wide){
+				background-size: auto 100%;
+			}
+			
 		}
 		
-		#bkgrd {
-			position: fixed;
-			z-index: 0;
-			top:0;
+		#bkgrd_watercolor {
+			position: absolute;
+			z-index: 1;
+			bottom:0;
 			left: 0;
-			right: 0;
-			bottom: 0;
+			width: 100%;
+			height:100%;
+			background: image-url('watercolor.png') center bottom no-repeat;
+			background-size: auto 116%;
+		}
+	
+		#bkgrd_stars {
+			position: absolute;
+			z-index: 0;
 			width: 100%;
 			height: 100%;
-			background: url(../imgs/bkgrd.jpg) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./imgs/bkgrd.jpg', sizingMethod='scale');
-			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/bkgrd.jpg', sizingMethod='scale')";
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: image-url('stars.png') 0 0 repeat;
+			background-size: 719px 622px;
+			
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 10%;
+				left: 0;
+				width: 100%;
+				height: 80%;
+				@include linear-gradient(rgba($color-bkgrd,0), rgba($color-bkgrd,0.9));
+			}
 		}

@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_directory ./libs
+//= require_directory .
+
+$(document).ready(function() {
+
+	$('.fittext').each(function(index, val) {
+  	$(this).fitToHeight({debug: false});
+  });
+  
+});

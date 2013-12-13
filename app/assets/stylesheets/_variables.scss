@@ -5,10 +5,13 @@
 // =============
 
 	// Main colour palette
-	$color-primary 				: #b9b227;
-	$color-secondary 			: #6b747c;
-	$color-bkgrd 					: #272829;
-	$color-bkgrd-box 			: rgba(45, 72, 89, 0.95);
+	$color-primary 				: rgb(227, 144, 39);	// Gold
+	$color-secondary 			: rgb(163, 5, 15);		// Deep Red
+	$color-tertiary 			: rgb(66, 140, 51);		// Green
+	$color-bkgrd 					: rgb(10, 28, 37);		// Dark Blue
+	$color-bkgrd-lighter 	: rgb(27, 46, 57);		// Dark Blue (grad top)
+	$color-bkgrd-lightest : rgb(158, 190, 205);	// Light Blue (snow)
+
 	
 	// Common colours
 	$color-text					 	: #efefef;
@@ -16,10 +19,6 @@
 	$color-text-secondary	: #bdc3c8;
 	$color-text-dark 			: darken($color-secondary,30%);
 	$color-border				 	: #ddd;
-	$color-overlay-dark		: rgba(34,45,50,0.95);
-	$color-overlay-light	: rgba(255,255,255,0.95);
-	$color-overlay-blue				 : rgba(45,72,89,0.95);
-	$color-overlay-brightblue	 : rgba(58,166,216,0.95);
 	
 	// Links
 	$color-link-default	 	: darken($color-primary,5%);
@@ -60,27 +59,40 @@
 	$base-gutter					: 1.714em;	// 32px
 	$gut									: $base-gutter;
 	$base-site-width-min	: 20em;			// 320px
-	$base-site-width-max	: 61.25em;	// 980px
+	$base-site-width-max	: 99.75em;	// 1596px
+	$base-site-height-min : 43.75em; 	// 700px
+	$base-site-height-mid : 57.5em; 	// 920px
+	$base-site-height-max : 68.75em; 	// 1100px
 	
 // Breakpoints
 // ===========
 
-	$breakpoint-mid: ($base-site-width-max - $base-site-width-min)/2 + $base-site-width-min;
-	$breakpoint-wide: $base-site-width-max;
+	$breakpoint-mid 			: ($base-site-width-max - $base-site-width-min)/2 + $base-site-width-min;
+	$breakpoint-wide 			: $base-site-width-max;
+	$breakpoint-short 		: $base-site-height-mid;
+	$breakpoint-tall 			: $base-site-height-max;
 
 
 // Fonts
 // ===========
+	@font-face {
+		font-family: 'sofiaregular';
+	    src: font-url('sofia-regular-webfont.eot');
+	    src: font-url('sofia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	         font-url('sofia-regular-webfont.woff') format('woff'),
+	         font-url('sofia-regular-webfont.ttf') format('truetype'),
+	         font-url('sofia-regular-webfont.svg#sofiaregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
 
 	$font-family-sans 		: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	$font-family-serif 		: Georgia, Times, "Times New Roman", serif;
 	$font-family-display 	: $font-family-sans;
 	$font-family-caption 	: $font-family-serif;
 	$font-family-default 	: $font-family-sans;
-	$font-family-brand 		: $font-family-serif;
-	$font-family-brand-b 	: $font-family-serif;
-	//$font-family-brand 		: "OfficinaSansITCStd-Book", Georgia, Times, "Times New Roman", serif;
-	//$font-family-brand-b 	: "OfficinaSansITCStd-Bold", Georgia, Times, "Times New Roman", serif;
+	$font-family-brand 		: "sofiaregular", Georgia, Times, "Times New Roman", serif;
+	$font-family-brand-b 	: $font-family-brand;
 	
 	$font-weight-light		: 300;
 	$font-weight-normal		: 400;

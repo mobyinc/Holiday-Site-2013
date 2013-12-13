@@ -17,8 +17,8 @@
     body, select, input, textarea, button { font-family: $font-family-default; }
 
     /* Display font stack */
-    h1,h2,h3 { font-family: $font-family-brand; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-shadow: transparent 0 0 1px;}
-		h4,h5,h6 { font-family: $font-family-brand; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; text-shadow: transparent 0 0 1px;}
+    h1,h2,h3 { font-family: $font-family-brand; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
+		h4,h5,h6 { font-family: $font-family-brand; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; }
 
     /* Alternate font stack */
     blockquote, figcaption { font-family: $font-family-serif;  }
@@ -28,9 +28,8 @@
 
     h1, h2, h3, h4, h5, h6  { font-style: normal; font-weight: $font-weight-normal; line-height: 1.2em; }
 
-    h1 { font-size: rs(32,14); margin: 0 0 rs(12,28) 0; letter-spacing: -0.03em; text-transform: uppercase;font-weight: $font-weight-light;
-    }
-    h2 { font-size: rs(26,14); margin: rs(24,26) 0 rs(12,26) 0; text-transform: uppercase;}
+    h1 { font-size: rs(32,14); margin: 0 0 rs(12,28) 0;}
+    h2 { font-size: rs(26,14); margin: rs(24,26) 0 rs(12,26) 0; }
     h3 { font-size: rs(24,14); margin: rs(20,22) 0 rs(12,22) 0; }
     h4 { font-size: rs(22,14); margin: rs(16,18) 0 rs(12,18) 0; }
     h5 { font-size: rs(18,14); margin: rs(16,16) 0 rs(12,16) 0; }
