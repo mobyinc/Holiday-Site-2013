@@ -15,7 +15,6 @@ body {
 		height: 100%;
 		padding-top: $base-site-height-min;
 		background: $color-bkgrd-lighter;
-		//@include linear-gradient($color-bkgrd-lighter, $color-bkgrd);
 		
 		@include respond-min($breakpoint-mid){
 			padding-top: 55%;
@@ -67,8 +66,10 @@ body {
 			right: 0;
 			bottom: 0;
 			left: 0;
-			background: image-url('stars.png') 0 0 repeat;
-			background-size: 719px 622px;
+			//background: image-url('stars.png') 0 0 repeat;
+			//background-size: 719px 622px;
+			@include retina-image(stars, 719px 622px);
+
 			
 			&:before {
 				content: "";
