@@ -18,7 +18,23 @@
 $(document).ready(function() {
 
 	$('.fittext').each(function(index, val) {
-  	$(this).fitToHeight({debug: false});
-  });
-  
+		$(this).fitToHeight({debug: false});
+	});
+
+	$(window).resize(updateRatioElements);
+
+	updateRatioElements();
 });
+
+function updateRatioElements(e) {
+	$('.ratio').each(adjustRatioWidth);
+}
+
+function adjustRatioWidth(index, el) {
+	var $target = $(el);
+	var height = $target.height();
+	var ratio = $target.data('ratio');
+	var width = height * ratio;
+
+	$target.css('width', width + "px");
+}
