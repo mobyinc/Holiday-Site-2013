@@ -14,13 +14,13 @@
 	
 	h1 {
 		@include box-sizing;
-		position: relative;
+		position: absolute;
 		z-index: 1;
 		display: table;
-		z-index: 0;
-		width: 100%;
-		margin: 5.5% 0 0 !important;
+		bottom: 78.5%;
 		height: 9%;
+		width: 100%;
+		margin: 0;
 		font-size: 1em;
 		line-height: 1;
 		color: $color-primary;
@@ -28,7 +28,7 @@
 		text-shadow: 0 0.1em 0.8em #000;
 		
 		b {
-			@extend %hide-txt;			
+			@extend %visually-hidden;
 		}
 		
 		.fittext {
@@ -42,14 +42,21 @@
 	
 	// Orgament Mask Placement
 	
-	.ornaments {
-		position: relative;
-		@extend %centered;
-		height: 7.5%;
-		border-bottom: 1px solid black;
-		background-color: rgba(72, 224, 255, 0.6);
+	#ornaments {
+		position: absolute;
+		z-index: 0;
+		width: 100%;
+		height: 68.5%;
+		bottom: 10%;
+	
+		.bounds {
+			position: relative;
+			@extend %centered;
+			height: 11.11%;
+			border-bottom: 1px solid $color-bkgrd;
+			background-color: rgba(72, 224, 255, 0.6);
+		}
 	}
-		
 }
 
 
