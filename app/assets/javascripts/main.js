@@ -21,20 +21,42 @@ $(document).ready(function() {
 		$(this).fitToHeight({debug: false});
 	});
 
+	var $cta = $('#cta');
+	var smallMode = false;
+
 	$(window).resize(updateRatioElements);
 
 	updateRatioElements();
+
+	// listen for media match/unmatch for cta
+	enquire.register("screen and (max-width: 59.875em)", {
+		match: function() {
+			smallMode = true;
+			updateRatioElements();
+		},
+		unmatch: function() {
+			smallMode = false;
+			updateRatioElements();
+		}
+	});
+
+	function updateRatioElements(e) {
+		$('.ratio').each(adjustRatioWidth);
+
+		// fix cta centering
+		var width = $cta.width();
+		var margin = smallMode ? -width/2 : 0;
+		$cta.css('margin-left', margin + "px");
+	}
+
+	function adjustRatioWidth(index, el) {
+		var $target = $(el);
+		var height = $target.height();
+		var ratio = $target.data('ratio');
+		var width = height * ratio;
+
+		$target.css('width', width + "px");
+	}
+
 });
 
-function updateRatioElements(e) {
-	$('.ratio').each(adjustRatioWidth);
-}
-
-function adjustRatioWidth(index, el) {
-	var $target = $(el);
-	var height = $target.height();
-	var ratio = $target.data('ratio');
-	var width = height * ratio;
-
-	$target.css('width', width + "px");
-}
