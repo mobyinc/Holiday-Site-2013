@@ -56,6 +56,15 @@
 			border-bottom: 1px solid $color-bkgrd;
 			background-color: rgba(72, 224, 255, 0.6);
 		}
+		
+			.ornament {
+				position: absolute;
+				height: 90%;
+				
+				img {
+					height: 100%;
+				}
+			}
 	}
 }
 
