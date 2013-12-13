@@ -1,0 +1,61 @@
+/* Decorate Your Ornament CTA (responsive)
+---------------------------------------------------------------------- */
+
+#cta {
+	position: absolute;
+	z-index: 5;
+	bottom: -15%;
+	left: -12%;
+	height: 40%;
+	
+	a {
+		position: absolute;
+		z-index: 0;
+		@extend %hide-txt;
+		height: 40.864%;
+		width: 45.344%;
+		top:30%;
+		left:50%;
+		//background: red;
+		background: image-url('cta_tag.png') 0 0 no-repeat;
+		background-size: auto 100%;
+		
+		@include prefixer(transition, all 0.2s ease-in-out, webkit moz ms o spec);
+				
+		&:hover {
+			@include transform(rotate(-3deg));
+			@include transform-origin(left center);
+		}
+	}
+	
+	.cta-ornament {
+		position: absolute;
+		z-index: 1;
+		height: 96.652%;
+		width: 47.692%;
+		left: 10%;
+		top: -5%;
+		background: image-url('cta_ornament.png') 0 0 no-repeat;
+		background-size: auto 100%;
+	}
+	
+	img {
+		height: 100%;
+		width: auto;
+	}
+	
+	
+	// Smaller
+	// =======
+	
+	@include respond-max($breakpoint-mid){
+		left: 0;
+		bottom: 0;
+		height: 20%;
+		
+		a {
+			width: 41.642%;
+		}
+		
+	};
+}

@@ -15,6 +15,7 @@ body {
 		height: 100%;
 		padding-top: $base-site-height-min;
 		background: $color-bkgrd-lighter;
+		overflow: hidden;
 		
 		@include respond-min($breakpoint-mid){
 			padding-top: 55%;
