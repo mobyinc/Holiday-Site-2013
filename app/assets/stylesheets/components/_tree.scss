@@ -14,11 +14,12 @@
 	
 	h1 {
 		@include box-sizing;
-		position: absolute;
+		position: relative;
+		z-index: 1;
 		display: table;
 		z-index: 0;
 		width: 100%;
-		bottom: 78.5%;
+		margin: 5.5% 0 0 !important;
 		height: 9%;
 		font-size: 1em;
 		line-height: 1;
@@ -38,6 +39,17 @@
 			vertical-align: middle;
 		}
 	}
+	
+	// Orgament Mask Placement
+	
+	.ornaments {
+		position: relative;
+		@extend %centered;
+		height: 7.5%;
+		border-bottom: 1px solid black;
+		background-color: rgba(72, 224, 255, 0.6);
+	}
+		
 }
 
 
@@ -47,10 +59,11 @@
 #logo {
 	position: absolute;
 	z-index: 3;
-	bottom:81%;
+	bottom:78%;
 	left: 0;
 	width: 100%;
 	height: 25%;
+	@extend %hidetxt;
 	background: image-url('moby.png') center center no-repeat;
 	background-size: auto 100%;
 }
