@@ -16,6 +16,19 @@
 //= require_directory .
 
 $(document).ready(function() {
+	// snow settings
+	snowStorm.autoStart = true;
+	snowStorm.targetElement = 'wrapper';
+	snowStorm.flakesMax = 100;
+	snowStorm.flakesMaxActive = 100;
+	snowStorm.followMouse = false;
+	snowStorm.useMeltEffect = false;
+	snowStorm.snowStick = false;
+	snowStorm.snowColor = '#a1c2d1';
+	snowStorm.vMaxX = 8;
+	snowStorm.vMaxY = 5;
+	snowStorm.excludeMobile = false;
+
 
 	$('.fittext').each(function(index, val) {
 		$(this).fitToHeight({debug: false});
