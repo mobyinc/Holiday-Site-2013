@@ -7,10 +7,15 @@
 	z-index: 99;
 	top:12%;
 	left: 50%;
+	color: #000;
 	border-width:49px 52px 49px 52px;
 	@include border-image(image-url('modal.png') 98 108 98 99 repeat);
 	
 	.content {
+		min-height: 200px;
+		margin: -1.5em;
+		padding: $gut;
+		@include rounded(1em);
 		background: white;
 	}
 }
