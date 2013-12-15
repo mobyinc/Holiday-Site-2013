@@ -600,7 +600,7 @@ var snowStorm = (function(window, document) {
   };
 
   this.start = function(bFromOnLoad) {    
-    debugger;
+    //debugger;
     if (!didInit) {
       didInit = true;
     } else if (bFromOnLoad) {
