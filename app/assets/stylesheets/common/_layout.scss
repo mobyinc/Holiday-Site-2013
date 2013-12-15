@@ -18,11 +18,11 @@ body {
 		overflow: hidden;
 		
 		@include respond-min($breakpoint-mid){
-			padding-top: 55%;
+			padding-top: 48%;
 		};
 		
 		@include respond-min($breakpoint-wide){
-			padding-top: 52%;
+			padding-top: 45%;
 		};
 	}
 	
