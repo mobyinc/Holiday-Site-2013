@@ -112,7 +112,7 @@ $border-height: rs(49);
 			height: rs(136);
 			margin: 0;
 			
-			@include respond-max(33em){
+			@include respond-max($breakpoint-modal){
 				width: rs(320);
 			}
 			
