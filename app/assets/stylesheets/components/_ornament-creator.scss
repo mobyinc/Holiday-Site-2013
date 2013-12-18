@@ -11,4 +11,104 @@
 		}
 	}
 
+	// Shape Chooser
+	// =============
+	
+	#ornament_chooser {
+		text-align: center;
+		position: relative;
+		overflow: visible;
+		z-index: 1;
+		
+		@include respond-max(33em){
+			margin: 0 -(rs(30));
+		}
+		
+		a {
+			position: absolute;
+			z-index: 1;
+		}
+		
+		.shape_left,
+		.shape_right {
+			top:50%;
+			width: rs(71);
+			height: rs(71);
+			margin: -(rs(35)) 0 0;
+			
+			@include respond-max(33em){
+				display: none;
+			}
+			
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.shape_left 	{ left:  -(rs(20)); }
+		.shape_right 	{ right: -(rs(20)); }
+		
+		.prev,
+		.next {
+			top:50%;
+			@extend %hide-txt;
+			font-size: 16px;
+			width: rs(45);
+			height: rs(50);
+			margin: -(rs(25)) 0 0;
+			@include retina-image(decorate/arrows, 90px 100px);
+		}
+		
+		.prev {
+			left: 10%;
+
+			&:active {
+				background-position: 0 -50px;
+			}
+			
+			@include respond-max(33em){
+				left: 0;
+			}
+		}
+		
+		.next {
+			right: 10%;
+			
+			background-position: -45px 0;
+			
+			&:active {
+				background-position: -45px -50px;
+			}
+			
+			@include respond-max(33em){
+				right: 0;
+			}
+		}
+
+	}
+	
+	// Decorator Tools
+	// ===============
+	
+	#ornament_decorator {
+		border: 1px dotted red;
+	}
+
+}
+
+/* Ornament Detail pulled out so it can be used in other modals...
+---------------------------------------------------------------------- */
+
+.ornament_detail {
+	@include inline-block;
+	position: relative;
+	z-index: 0;
+	margin: 0 -(rs(30));
+	
+	img.sticker {
+		position: absolute;
+		z-index: 1;
+		top:0;
+		left: 0;
+	}
 }

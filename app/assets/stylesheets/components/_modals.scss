@@ -55,7 +55,7 @@ $border-height: rs(49);
 			&:after {
 				content: "";
 				position: absolute;
-				z-index: 1;
+				z-index: 0;
 				top:0;
 				right: -($border-width);
 				width: $border-width;
@@ -74,7 +74,7 @@ $border-height: rs(49);
 				&:before {
 					content: "";
 					position: absolute;
-					z-index: 1;
+					z-index: 0;
 					left: 0;
 					bottom: -($border-height);
 					width: 100%;
@@ -86,7 +86,7 @@ $border-height: rs(49);
 				&:after {
 					content: "";
 					position: absolute;
-					z-index: 1;
+					z-index: 0;
 					right: -($border-width);
 					bottom: -($border-height);
 					width: $border-width;
@@ -107,8 +107,10 @@ $border-height: rs(49);
 			left: rs(4);
 			width: rs(540);
 			font-size: rs(16);
+			line-height: 1;
 			@extend %hide-txt;
 			height: rs(136);
+			margin: 0;
 			
 			@include respond-max(33em){
 				width: rs(320);
