@@ -33,9 +33,8 @@
         background-image: url("../imgs/" + $filename + "@2x" + "." + $extension);
       }
     }
-
-    background-size: $background-size;
-
   }
+  
+  background-size: $background-size;
 }
 

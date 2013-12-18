@@ -1,6 +1,11 @@
 /* Basic Modal Styling
 ---------------------------------------------------------------------- */
 
+$border-width: rs(51);
+$border-height: rs(49);
+
+/* ------------------------------------------------------------------- */
+
 .modal-overlay {
 	//display: none;
 	position: fixed;
@@ -9,10 +14,8 @@
 	height: 100%;
 	overflow: auto;
 	top: 0;
-	right: 0;
-	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.7);
+	background: rgba(4,12,16,0.7);
 }
 
 	.modal {
@@ -20,19 +23,159 @@
 		@include box-sizing;
 		position: absolute;
 		z-index: 1;
-		top:10%;
+		top:15%;
 		left: 50%;
+		padding-right: $border-width;
 		color: #000;
-		border-width:49px 52px 49px 52px;
-		@include border-image(image-url('modal.png') 98 108 98 99 repeat);
 		
-		.content {
-			min-height: 200px;
-			margin: -1.5em;
-			padding: $gut;
-			@include rounded(1em);
-			background: white;
+		&.wide {
+			width: rs(546);
+			margin: 0 0 0 -(rs(273));
+			
+			@include respond-max(33em){
+				width: rs(326);
+				margin: 0 0 0 -(rs(163));
+			}
 		}
+		
+		&.skinny {
+			width: rs(320);
+			margin: 0 0 0 -(rs(160));
+		}
+		
+		// Candy Cane Box
+		// ==============
+		
+		.modal_bkgrd {
+			position: relative;
+			z-index: 1;
+			@include retina-image(modal, 600px 800px);
+			background-position: left top;
+		
+			&:after {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top:0;
+				right: -($border-width);
+				width: $border-width;
+				height: 100%;
+				@include retina-image(modal, 600px 800px);
+				background-position: right top;
+			}
+			
+			.content {
+				@include box-sizing;
+				position: relative;
+				width: 100%;
+				min-height: 200px;
+				padding: $border-height 0 0 $border-width;
+	
+				&:before {
+					content: "";
+					position: absolute;
+					z-index: 1;
+					left: 0;
+					bottom: -($border-height);
+					width: 100%;
+					height: $border-height;
+					@include retina-image(modal, 600px 800px);
+					background-position: left bottom;
+				}
+				
+				&:after {
+					content: "";
+					position: absolute;
+					z-index: 1;
+					right: -($border-width);
+					bottom: -($border-height);
+					width: $border-width;
+					height: $border-height;
+					@include retina-image(modal, 600px 800px);
+					background-position: right bottom;
+				}
+			}
+		}
+		
+		// Header Banners
+		// ==============
+		
+		h2 {
+			position: absolute;
+			z-index: 2;
+			top: -(rs(58));
+			left: rs(4);
+			width: rs(540);
+			font-size: rs(16);
+			@extend %hide-txt;
+			height: rs(136);
+			
+			@include respond-max(33em){
+				width: rs(320);
+			}
+			
+			&:before {
+				content: "";
+				position: absolute;
+				top:0;
+				left: -(rs(29));
+				height: rs(136);
+				width: rs(29);
+				@include retina-image(banner/over-left, rs(29) rs(136));
+			}
+			
+			&:after {
+				content: "";
+				position: absolute;
+				top:0;
+				right: -(rs(29));
+				height: rs(136);
+				width: rs(29);
+				@include retina-image(banner/over-right, rs(29) rs(136));
+			}
+		}
+		
+		.ribbons {
+			position: absolute;
+			z-index: 0;
+			top: -(rs(26));
+			left:-(rs(160));
+			width: 100%;
+			padding: 0 rs(160);
+			height:rs(151);
+			background-image: image-url('banner/under-left.png'), image-url('banner/under-right.png');
+	    background-repeat: no-repeat;
+	    background-position: left top, right rs(14);
+			
+			@include hidpi {
+				background-image: image-url('banner/under-left@2x.png'), image-url('banner/under-right@2x.png');
+				background-size: rs(168) rs(137);
+			}
+		}
+		
+		// Close Button
+		// ============
+		
+		.btn_close {
+			position: absolute;
+			z-index: 2;
+			top:rs(20);
+			right: rs(20);
+			@extend %hide-txt;
+			font-size: 16px;
+			height: rs(40);
+			width: rs(40);
+			@include retina-image(btn_close, rs(40) rs(40));
+			
+			&:active {
+				margin-top: rs(2);
+			}
+		}
+		
+		h2 + .modal_bkgrd + .btn_close {
+			top:rs(42);
+		}
+		
 	}
 
 

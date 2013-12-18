@@ -2,6 +2,13 @@
 ---------------------------------------------------------------------- */
 
 #ornament_creator {
-	width: 500px;
-	margin: 0 0 0 -250px;
+
+	h2 {
+		@include retina-image(banner/h_decorate-bg, rs(540) rs(136));
+		
+		@include respond-max(33em){
+			@include retina-image(banner/h_decorate-sm, rs(320) rs(136));
+		}
+	}
+
 }
