@@ -1,0 +1,10 @@
+/* Thanks! Modal
+---------------------------------------------------------------------- */
+
+#ornament_thanks {
+
+	h2 {
+		@include retina-image(banner/h_thanks, rs(320) rs(136));
+	}
+
+}

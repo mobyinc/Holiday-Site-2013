@@ -39,8 +39,8 @@ $border-height: rs(49);
 		}
 		
 		&.skinny {
-			width: rs(320);
-			margin: 0 0 0 -(rs(160));
+			width: rs(326);
+			margin: 0 0 0 -(rs(163));
 		}
 		
 		// Candy Cane Box
@@ -97,6 +97,27 @@ $border-height: rs(49);
 			}
 		}
 		
+		// Content
+		// =======
+		
+		h4 {
+			text-align: center;
+			font-style: italic;
+		}
+		
+		p {
+			font-size: rs(15);
+			font-family: $font-family-serif;
+			font-style: italic;
+		}
+
+		.ornament_detail {
+			position: relative;
+			z-index: 1;
+			margin: -(rs(20)) 0 0 -(rs(43));
+		}
+
+		
 		// Header Banners
 		// ==============
 		
@@ -135,6 +156,10 @@ $border-height: rs(49);
 				width: rs(29);
 				@include retina-image(banner/over-right, rs(29) rs(136));
 			}
+		}
+		
+		&.skinny h2 {
+			width: rs(320);
 		}
 		
 		.ribbons {
@@ -186,12 +211,31 @@ $border-height: rs(49);
 			z-index: 2;
 			width: 100%;
 			margin: 0 -(rs(20));
-			margin-top: rs(20);
-			padding: rs(30) rs(20) 0;
+			margin-top: rs(10);
+			padding: rs(20) rs(20) 0;
 			text-align: center;
 			@include retina-image(hr, rs(470) rs(8));
 			background-position: center top;
 			background-repeat: no-repeat;
+		}
+
+		// Share to FB CTA
+		// ===============
+		
+		.btn_share {
+			position: relative;
+			@include inline-block;
+			margin-top: 0;
+			margin-left: -(rs(20));
+			margin-right: -(rs(20));
+			margin-bottom: -(rs(20));
+			width: rs(256);
+			height: rs(53);
+			@include retina-image(btn_facebook, rs(256) rs(53));
+	
+			span {
+				@extend %hide-txt;
+			}
 		}
 		
 	}
