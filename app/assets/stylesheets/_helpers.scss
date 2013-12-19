@@ -78,6 +78,7 @@
 	
 	// Image Replacement
 	%hide-txt { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
+	%hide-txt-over { text-indent: -200%; overflow: hidden; color: transparent; }
 
 	// Hide from both screenreaders and browsers: h5bp.com/u
 	%hidden { display: none !important; visibility: hidden; }

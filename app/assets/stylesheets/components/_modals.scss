@@ -178,6 +178,22 @@ $border-height: rs(49);
 			top:rs(42);
 		}
 		
+		// CTA area
+		// ========
+		
+		.cta {
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			margin: 0 -(rs(20));
+			margin-top: rs(20);
+			padding: rs(30) rs(20) 0;
+			text-align: center;
+			@include retina-image(hr, rs(470) rs(8));
+			background-position: center top;
+			background-repeat: no-repeat;
+		}
+		
 	}
 
 

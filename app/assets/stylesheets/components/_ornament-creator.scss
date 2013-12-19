@@ -56,14 +56,14 @@
 			width: rs(45);
 			height: rs(50);
 			margin: -(rs(25)) 0 0;
-			@include retina-image(decorate/arrows, 90px 100px);
+			@include retina-image(decorate/arrows, rs(90) rs(100));
 		}
 		
 		.prev {
 			left: 10%;
 
 			&:active {
-				background-position: 0 -50px;
+				background-position: 0 -(rs(50));
 			}
 			
 			@include respond-max($breakpoint-modal){
@@ -74,10 +74,10 @@
 		.next {
 			right: 10%;
 			
-			background-position: -45px 0;
+			background-position: -(rs(45)) 0;
 			
 			&:active {
-				background-position: -45px -50px;
+				background-position: -(rs(45)) -(rs(50));
 			}
 			
 			@include respond-max($breakpoint-modal){
@@ -107,12 +107,12 @@
 			}
 			
 			h3 {
-				margin: 0 auto;
 
 				a {
 					display: block;
 					width: rs(230);
 					height: rs(82);
+					margin: 0 auto;
 					font-size: 16px;
 					line-height: 1;
 					text-indent: -9999px;
@@ -209,8 +209,38 @@
 					@include retina-image(decorate/sticker_on, 50px 50px);
 				}
 			}
+		}	
+	}
+	
+	// Hang Ornatment CTA
+	// ==================
+	
+	.btn_hang {
+		position: relative;
+		@include inline-block;
+		margin: 0 0 -(rs(10));
+		width: rs(215);
+		height: rs(53);
+		@include retina-image(decorate/btn_submit, rs(215) rs(53));
+		
+		&:after {
+			content: "";
+			position: absolute;
+			top:50%;
+			right: -(rs(80));
+			margin-top: -(rs(34));
+			width: rs(67);
+			height: rs(68);
+			@include retina-image(decorate/scene, rs(67) rs(68));
+			
+			@include respond-max($breakpoint-modal){
+				display: none;
+			}
 		}
 		
+		span {
+			@extend %hide-txt;
+		}
 	}
 
 }
