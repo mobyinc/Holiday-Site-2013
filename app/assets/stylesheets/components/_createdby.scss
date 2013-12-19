@@ -1,0 +1,71 @@
+/* Created By callout
+---------------------------------------------------------------------- */
+
+.createdby {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		margin: 0 -(rs(20));
+		margin-top: rs(10);
+		padding: rs(12) rs(20);
+		text-align: center;
+		text-shadow: 0 rs(1) 0 #fff;
+		@include retina-image(decorate/stickers_bkgrd, 100% 100%);
+		background-position: center center;
+		background-repeat: no-repeat;
+		
+		h4 {
+			position: relative;
+			width: 70%;
+			margin: 0 0 0 40%;
+			font-size: 38px;
+			padding: rs(3);
+			color: $color-secondary;
+			text-align: left;
+			@extend %truncate;
+			
+			.fittext {
+				width: 100%;
+				background: blue;
+			}
+		}
+		
+		h5 {
+			margin: 0;
+			font-family: $font-family-serif;
+			font-style: italic;
+			font-size: rs(17);
+			color: #666;
+			
+			b {
+				@extend %brand-font;
+				font-style: normal;
+				font-size: rs(18);
+				color: $color-tertiary;
+			}
+		}
+		
+		// If it has a Name on it then do this stuffs
+		// ==========================================
+		
+		&.named {
+			padding-top: 0;
+			
+			&:before {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				width: rs(107);
+				height: rs(70);
+				left: 0;
+				top: 0;
+				@include retina-image(createdby, rs(107) rs(70));
+				background-repeat: no-repeat;
+			}
+			
+			h5 {
+				text-indent: rs(22);
+			}
+		}
+		
+}

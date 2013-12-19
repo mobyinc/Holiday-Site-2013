@@ -30,9 +30,11 @@ $(document).ready(function() {
 	snowStorm.excludeMobile = false;
 
 
-	$('.fittext').each(function(index, val) {
+	$('.fittextHeight').each(function(index, val) {
 		$(this).fitToHeight({debug: false});
 	});
+	
+	$(".fittext").fitText(0.5, { minFontSize: '16px', maxFontSize: '35px' });
 
 	var $cta = $('#cta');
 	var smallMode = false;

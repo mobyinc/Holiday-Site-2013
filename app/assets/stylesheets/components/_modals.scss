@@ -101,11 +101,13 @@ $border-height: rs(49);
 		// =======
 		
 		h4 {
+			margin-bottom: rs(4);
 			text-align: center;
 			font-style: italic;
 		}
 		
 		p {
+			margin: 0;
 			font-size: rs(15);
 			font-family: $font-family-serif;
 			font-style: italic;

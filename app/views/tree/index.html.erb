@@ -1,7 +1,7 @@
 <div id="wrapper">
 	<div id="tree">
 			<% if @invite %>
-			<h1><b>Happy Holidays</b> <span class="fittext"><%= @invite.name %>!</span></h1>
+			<h1><b>Happy Holidays</b> <span class="fittextHeight"><%= @invite.name %>!</span></h1>
 			<% else %>
 			<h1><b>Happy Holidays!</b></h1>
 			<% end %>
@@ -33,7 +33,7 @@
 	<div id="bkgrd_stars"></div>
 </div>
 
-<div class="modal-overlay">
+<div class="modal-overlay" style="display:none;">
 
 	<div id="ornament_creator" class="modal wide" style="display:none;">
 		<h2>Welcome to the Decoration Workshop</h2>
@@ -106,6 +106,9 @@
 						<%= image_tag "ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
 						<%= image_tag "ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
 					</div>
+					<div class="createdby">
+						<h5>Created after <b>42</b> variations</h5>
+					</div>
 					<h4>Oh, That's Nice</h4>
 					<p>Now that you've hung your beautiful ornament on our tree, why not spread a little holiday cheer and invite your friends to see this masterpiece?</p>
 					<div class="cta">
@@ -117,13 +120,22 @@
 		<div class="ribbons"></div>
 	</div>
 	
-	<div id="ornament_details" class="modal skinny">
+	<div id="ornament_details" class="modal skinny" style="display:none;">
 		<div class="modal_bkgrd">
 			<div class="content">
 					<div class="ornament_detail">
 						<%= image_tag "ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
 						<%= image_tag "ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
 					</div>
+					<div class="createdby named">
+						<h4 class="fittext">Amy</h4>
+						<h5>after <b>42</b> variations</h5>
+					</div>
+					<!-- If we don't know the author's name show this one...
+					<div class="createdby">
+						<h5>Created after <b>42</b> variations</h5>
+					</div>
+					-->
 					<div class="cta">
 						<a href="#" class="btn_share"><span>Spread Cheer on Facebook &raquo;</span></a>
 					</div>
