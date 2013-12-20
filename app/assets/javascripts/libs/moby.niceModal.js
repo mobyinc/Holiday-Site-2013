@@ -20,6 +20,11 @@
 					var modalId = $(this).data("modal-id");
 					var $modal = $("#" + modalId);
 
+					$modal.on('click', function(e) {
+						// stop propigation in case nested in overlay
+						e.stopPropagation();
+					});
+
 					$overlay.on("click", function() {
 						closeModal(modalId);
 					});
@@ -36,6 +41,15 @@
 
 					$modal.css({ display: 'block', opacity: 0 });
 					$modal.fadeTo(200, 1.0);
+
+					if (o.ajax_source) {
+						$content = $modal.find('.content');
+						$content.empty();
+
+						// loading indicator
+
+						$content.load(o.ajax_source);
+					}
 				});
 			});
 

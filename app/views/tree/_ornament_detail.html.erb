@@ -5,15 +5,15 @@
 
 <% if ornament.invite %>
 <div class="createdby named">
-	<h4 class="fittext">Amy</h4>
-	<h5>after <b>42</b> variations</h5>
+	<h4 class="fittext"><%= ornament.invite.name %></h4>
+	<h5>after <b><%= ornament.variations %></b> variations</h5>
 </div>
 <% else %>
 <div class="createdby">
-	<h5>Created after <b>42</b> variations</h5>
+	<h5>Created after <b><%= ornament.variations %></b> variations</h5>
 </div>
 <% end %>
 
 <div class="cta">
-	<a href="#" class="btn_share"><span>Spread Cheer on Facebook &raquo;</span></a>
+	<a href="#" class="btn_share" data-share-url="<%= ornament_url @ornament %>"><span>Spread Cheer on Facebook &raquo;</span></a>
 </div>

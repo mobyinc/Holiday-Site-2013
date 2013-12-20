@@ -43,7 +43,7 @@ $(document).ready(function() {
 	// modals
 	$('#cta_decorate').niceModal();
 	$('.ornament').each(function(index, el) {
-		$(this).niceModal({ ajax_source: 'ornament_detail/' + $(this).data('id') });
+		$(this).niceModal({ ajax_source: '/ornament/' + $(this).data('id') + "/detail"});
 	});
 
 	if (window.autoOpenOrnamentId > 0) {

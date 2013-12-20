@@ -6,13 +6,18 @@ $(document).ready(function() {
 		});
 	});
 
-	$('.btn_share').on('click', function(e) {
+	$('#ornament_details').on('click', '.btn_share', function(e) {
 		e.preventDefault();
+
+		var link = $(this).data('share-url');
 		
 		FB.ui({
 			method: 'feed',
-			link: 'https://google.com',
+			link: link,
+			name: 'Cool Name',
 			caption: 'An example caption',
+			description: 'The description',
+			actions: [{name:'create your own', link:'http://holiday.bymoby.com'}]
 		}, function(response){});
 	});
 });

@@ -5,7 +5,7 @@ class CreateOrnaments < ActiveRecord::Migration
     	t.string :shape
     	t.string :pattern
     	t.string :sticker
-    	t.int :variations
+    	t.integer :variations
 
       t.timestamps
     end

@@ -14,6 +14,12 @@ class TreeController < ApplicationController
 		render 'index'
 	end
 
+	def show_detail
+		@ornament = Ornament.find(params[:id])
+
+		render partial: 'ornament_detail', locals: { ornament: @ornament }
+	end
+
 	# helpers
 
 	def get_layout(count, include_id=nil)

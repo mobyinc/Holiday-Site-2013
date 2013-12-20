@@ -10,6 +10,8 @@ class Ornament < ActiveRecord::Base
 	SIZE_LARGE = "large"
 	SIZE_SMALL = "small"
 
+	belongs_to :invite
+
 	def pattern_image_path(size)
 		"ornaments/#{shape}/#{size}/#{pattern}.png"
 	end
