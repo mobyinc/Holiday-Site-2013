@@ -7,6 +7,13 @@ class TreeController < ApplicationController
 		@layout = get_layout(25)			
 	end
 
+	def show_create
+		@layout = get_layout(25)
+		@show_workshop = true
+
+		render 'index'
+	end	
+
 	def show		
 		@ornament = Ornament.find(params[:id])
 		@layout = get_layout(25, params[:id])

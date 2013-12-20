@@ -1,6 +1,7 @@
 <% content_for :head do %>
   <script type="text/javascript">
   	window.autoOpenOrnamentId = <%= @ornament ? @ornament.id : 0 %>;
+  	window.autoOpenWorkshop = <%= @show_workshop ? 'true' : 'false' %>;
   </script>
 <% end %>
 
@@ -45,8 +46,8 @@
 						</a>
 						<a href="#" class="prev">Prev</a>
 						<div class="ornament_detail">
-							<%= image_tag "ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
-							<%= image_tag "ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
+							<%= image_tag "/ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
+							<%= image_tag "/ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
 						</div>
 						<a href="#" class="next">Next</a>
 						<a href="#" class="shape_right">
@@ -103,8 +104,8 @@
 		<div class="modal_bkgrd">
 			<div class="content">
 					<div class="ornament_detail">
-						<%= image_tag "ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
-						<%= image_tag "ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
+						<%= image_tag "/ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
+						<%= image_tag "/ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
 					</div>
 					<div class="createdby">
 						<h5>Created after <b>42</b> variations</h5>

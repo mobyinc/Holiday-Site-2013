@@ -2,6 +2,8 @@ function Workshop($container) {
 	this.$container = $container;
 	this.$previous = $container.find('.prev');
 	this.$next = $container.find('.next');
+	this.$cta = $container.find('.cta');
+	this.$saveButton = $container.find('.btn_hang');
 
 	this.$leftShape = $container.find('.shape_left');
 	this.$ornament = $container.find('.ornament_detail');
@@ -80,6 +82,12 @@ Workshop.prototype.initialize = function() {
 
 		self.selectSticker(index);
 	});
+
+	this.$saveButton.on('click', function(e) {
+		e.preventDefault();
+
+		self.setLoading();
+	});
 };
 
 Workshop.prototype.selectPattern = function(index) {
@@ -152,4 +160,9 @@ Workshop.prototype.getSideShapeUrl = function(delta) {
 	url += "/shape_" + this.shapes[index] + ".png";
 
 	return url;
+};
+
+Workshop.prototype.setLoading = function() {
+	this.$cta.spin('button');
+	this.$saveButton.addClass('empty');
 };

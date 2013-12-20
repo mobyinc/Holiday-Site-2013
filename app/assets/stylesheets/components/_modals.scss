@@ -219,6 +219,13 @@ $border-height: rs(49);
 			@include retina-image(hr, rs(470) rs(8));
 			background-position: center top;
 			background-repeat: no-repeat;
+
+			.spinner {
+				position: absolute !important;
+				left: 50% !important;
+				top: 50% !important;
+				margin-top: rs(15);
+			}
 		}
 
 		// Share to FB CTA

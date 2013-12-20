@@ -47,7 +47,15 @@ $(document).ready(function() {
 	});
 
 	if (window.autoOpenOrnamentId > 0) {
-		$target = $(".ornament[data-id='" + autoOpenOrnamentId + "']");
+		var $target = $(".ornament[data-id='" + autoOpenOrnamentId + "']");
+		setTimeout(function() {
+			$target.trigger('modal.open');
+		}, 1000);
+	}
+
+	if (window.autoOpenWorkshop) {
+		var $target = $("#cta_decorate");
+
 		setTimeout(function() {
 			$target.trigger('modal.open');
 		}, 1000);
