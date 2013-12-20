@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 20131209224446) do
 
   create_table "ornaments", force: true do |t|
     t.integer  "invite_id"
-    t.string   "base_image"
-    t.string   "top_image"
+    t.string   "shape"
+    t.string   "pattern"
+    t.string   "sticker"
+    t.integer  "variations"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
