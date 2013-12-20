@@ -13,11 +13,11 @@ class Ornament < ActiveRecord::Base
 	belongs_to :invite
 
 	def pattern_image_path(size)
-		"ornaments/#{shape}/#{size}/#{pattern}.png"
+		"/ornaments/#{shape}/#{size}/#{pattern}.png"
 	end
 
 	def sticker_image_path(size)
-		"ornaments/#{shape}/#{size}/#{sticker}.png"
+		"/ornaments/#{shape}/#{size}/#{sticker}.png"
 	end
 
 	def self.create_random

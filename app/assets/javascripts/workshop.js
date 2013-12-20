@@ -128,19 +128,19 @@ Workshop.prototype.updatePreview = function() {
 };
 
 Workshop.prototype.getPatternUrl = function() {
-	return "/assets/ornaments/" + this.shape + "/large/" + this.pattern + ".png";
+	return "/ornaments/" + this.shape + "/large/" + this.pattern + ".png";
 };
 
 Workshop.prototype.getStickerUrl = function() {
 	if (this.sticker && this.sticker.length > 0) {
-		return "/assets/ornaments/" + this.shape + "/large/" + this.sticker + ".png";
+		return "/ornaments/" + this.shape + "/large/" + this.sticker + ".png";
 	} else {
 		return "";
 	}
 };
 
 Workshop.prototype.getSideShapeUrl = function(delta) {
-	var url = "/assets/decorate";
+	var url = "/decorate";
 	var index = this.shapeIndex + delta;
 
 	if (index < 0) {
