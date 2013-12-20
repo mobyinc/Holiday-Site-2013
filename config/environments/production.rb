@@ -78,5 +78,5 @@ HolidaySite::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.precompile += %w( .svg .eot .woff .ttf main.css ie.css)
+  config.assets.precompile += %w( .svg .eot .woff .ttf main.css ie.css main.js )
 end
