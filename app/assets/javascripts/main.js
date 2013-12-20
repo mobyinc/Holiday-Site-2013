@@ -53,6 +53,9 @@ $(document).ready(function() {
 		}, 1000);
 	}
 
+	// workshop
+	var workshop = new Workshop($('#ornament_creator'));
+
 	// ratio scaling elements
 	$(window).resize(updateRatioElements);
 	updateRatioElements();
