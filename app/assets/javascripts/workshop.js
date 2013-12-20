@@ -66,6 +66,32 @@ Workshop.prototype.initialize = function() {
 		e.preventDefault();
 		self.moveShapes(1);
 	});
+
+	this.$container.find('#choose_patterns li').on('click', function(e) {
+		e.preventDefault();
+		var index = $(this).parent().find('li').index(this);
+
+		self.selectPattern(index);
+	});
+
+	this.$container.find('#choose_stickers li').on('click', function(e) {
+		e.preventDefault();
+		var index = $(this).parent().find('li').index(this);
+
+		self.selectSticker(index);
+	});
+};
+
+Workshop.prototype.selectPattern = function(index) {
+	this.pattern = this.patterns[index];
+
+	this.updatePreview();
+};
+
+Workshop.prototype.selectSticker = function(index) {
+	this.sticker = this.stickers[index];
+
+	this.updatePreview();
 };
 
 Workshop.prototype.moveShapes = function(delta) {
