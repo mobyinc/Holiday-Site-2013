@@ -1,0 +1,19 @@
+<div class="ornament_detail">
+	<%= image_tag ornament.sticker_image_path(Ornament::SIZE_LARGE), size: "310x310", class: "sticker" %>
+	<%= image_tag ornament.pattern_image_path(Ornament::SIZE_LARGE), size: "310x310", class: "pattern" %>
+</div>
+
+<% if ornament.invite %>
+<div class="createdby named">
+	<h4 class="fittext">Amy</h4>
+	<h5>after <b>42</b> variations</h5>
+</div>
+<% else %>
+<div class="createdby">
+	<h5>Created after <b>42</b> variations</h5>
+</div>
+<% end %>
+
+<div class="cta">
+	<a href="#" class="btn_share"><span>Spread Cheer on Facebook &raquo;</span></a>
+</div>
