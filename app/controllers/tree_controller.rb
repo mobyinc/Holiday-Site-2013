@@ -8,6 +8,7 @@ class TreeController < ApplicationController
 	end
 
 	def show		
+		@ornament = Ornament.find(params[:id])
 		@layout = get_layout(25, params[:id])
 
 		render 'index'

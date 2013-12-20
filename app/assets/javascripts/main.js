@@ -19,8 +19,8 @@ $(document).ready(function() {
 	// snow settings
 	snowStorm.autoStart = false;
 	snowStorm.targetElement = 'wrapper';
-	snowStorm.flakesMax = 1;
-	snowStorm.flakesMaxActive = 1;
+	snowStorm.flakesMax = 5;
+	snowStorm.flakesMaxActive = 5;
 	snowStorm.followMouse = false;
 	snowStorm.useMeltEffect = false;
 	snowStorm.snowStick = false;
@@ -45,6 +45,13 @@ $(document).ready(function() {
 	$('.ornament').each(function(index, el) {
 		$(this).niceModal({ ajax_source: 'ornament_detail/' + $(this).data('id') });
 	});
+
+	if (window.autoOpenOrnamentId > 0) {
+		$target = $(".ornament[data-id='" + autoOpenOrnamentId + "']");
+		setTimeout(function() {
+			$target.trigger('modal.open');
+		}, 1000);
+	}
 
 	// ratio scaling elements
 	$(window).resize(updateRatioElements);
