@@ -49,20 +49,41 @@
 		height: 68.5%;
 		bottom: 10%;
 	
-		.bounds {
+		[class^="bounds_"],
+	  [class*=" bounds_"] {
 			position: relative;
 			@extend %centered;
 			height: 11.11%;
 			//border-bottom: 1px solid $color-bkgrd;
 			//background-color: rgba(72, 224, 255, 0.6);
 		}
+
+		.bounds_1 { z-index: 9; }
+		.bounds_2 { z-index: 8; }
+		.bounds_3 { z-index: 7; }
+		.bounds_4 { z-index: 6; }
+		.bounds_5 { z-index: 5; }
+		.bounds_6 { z-index: 4; }
+		.bounds_7 { z-index: 3; }
+		.bounds_8 { z-index: 2; }
+		.bounds_9 { z-index: 1; }
 		
 			.ornament {
 				position: absolute;
 				height: 120%;
 				
 				img {
+					position: relative;
+					z-index: 0;
 					height: 100%;
+
+					&.sticker {
+						position: absolute;
+						z-index: 1;
+						top: 0;
+						left: 0;
+					}
+
 				}
 			}
 	}

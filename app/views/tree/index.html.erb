@@ -4,27 +4,21 @@
 			<h1><b>Happy Holidays</b> <span class="fittextHeight"><%= @invite.name %>!</span></h1>
 			<% else %>
 			<h1><b>Happy Holidays!</b></h1>
-			<% end %>
+			<% end %>			
 			<div id="ornaments">
-				<div class="ratio bounds" data-ratio="2.20">
-					
+				<% @layout.each_with_index do |row, index| %>
+				<div class="ratio bounds_<%= index+1 %>" data-ratio="<%= row[:ratio] %>">
+					<% row[:ornaments].each do |ornament| %>
+					<% if ornament %>
+					<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_LARGE } %>
+					<% end %>
+					<% end %>
 				</div>
-				<div class="ratio bounds" data-ratio="3.12">
-					<div class="ornament" style="left:22%;top:45%;">
-						<%= image_tag "ornaments/test.png" %>
-					</div>					
-				</div>
-				<div class="ratio bounds" data-ratio="4.33"></div>
-				<div class="ratio bounds" data-ratio="4.33"></div>
-				<div class="ratio bounds" data-ratio="5.25"></div>
-				<div class="ratio bounds" data-ratio="4.80"></div>
-				<div class="ratio bounds" data-ratio="6.90"></div>
-				<div class="ratio bounds" data-ratio="8.70"></div>
-				<div class="ratio bounds" data-ratio="8.70"></div>
+				<% end %>
 			</div>
 	</div>
 	<div id="cta" class="ratio" data-ratio="1.84">
-		<a href="#">Decorate Your Ornament</a>
+		<a id="cta_decorate" href="#" data-modal-id="ornament_creator">Decorate Your Ornament</a>
 		<span class="cta-ornament"></span>
 	</div>
 	<h5 id="logo">Moby</h5>
@@ -33,7 +27,7 @@
 	<div id="bkgrd_stars"></div>
 </div>
 
-<div class="modal-overlay" style="display:none;">
+<div id="nice-overlay" class="modal-overlay" style="display:none;">
 
 	<div id="ornament_creator" class="modal wide" style="display:none;">
 		<h2>Welcome to the Decoration Workshop</h2>

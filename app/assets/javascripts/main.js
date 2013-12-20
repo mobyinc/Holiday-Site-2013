@@ -17,10 +17,10 @@
 
 $(document).ready(function() {
 	// snow settings
-	snowStorm.autoStart = true;
+	snowStorm.autoStart = false;
 	snowStorm.targetElement = 'wrapper';
-	snowStorm.flakesMax = 100;
-	snowStorm.flakesMaxActive = 100;
+	snowStorm.flakesMax = 1;
+	snowStorm.flakesMaxActive = 1;
 	snowStorm.followMouse = false;
 	snowStorm.useMeltEffect = false;
 	snowStorm.snowStick = false;
@@ -29,18 +29,25 @@ $(document).ready(function() {
 	snowStorm.vMaxY = 5;
 	snowStorm.excludeMobile = false;
 
-
+	// fit text
 	$('.fittextHeight').each(function(index, val) {
 		$(this).fitToHeight({debug: false});
 	});
 	
 	$(".fittext").fitText(0.5, { minFontSize: '16px', maxFontSize: '35px' });
 
+	// CTA tag
 	var $cta = $('#cta');
 	var smallMode = false;
 
-	$(window).resize(updateRatioElements);
+	// modals
+	$('#cta_decorate').niceModal();
+	$('.ornament').each(function(index, el) {
+		$(this).niceModal({ ajax_source: 'ornament_detail/' + $(this).data('id') });
+	});
 
+	// ratio scaling elements
+	$(window).resize(updateRatioElements);
 	updateRatioElements();
 
 	// listen for media match/unmatch for cta
@@ -72,6 +79,5 @@ $(document).ready(function() {
 
 		$target.css('width', width + "px");
 	}
-
 });
 
