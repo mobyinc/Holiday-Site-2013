@@ -19,8 +19,8 @@ $(document).ready(function() {
 	// snow settings
 	snowStorm.autoStart = false;
 	snowStorm.targetElement = 'wrapper';
-	snowStorm.flakesMax = 5;
-	snowStorm.flakesMaxActive = 5;
+	snowStorm.flakesMax = 20;
+	snowStorm.flakesMaxActive = 20;
 	snowStorm.followMouse = false;
 	snowStorm.useMeltEffect = false;
 	snowStorm.snowStick = false;
