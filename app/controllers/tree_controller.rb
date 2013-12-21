@@ -88,7 +88,7 @@ class TreeController < ApplicationController
 			delta = max_left - min_left
 			percent_full = slot / max_this_row.to_f
 
-			ornament.left = percent_full * delta + min_left + rand(-5..5)
+			ornament.left = percent_full * delta + min_left + rand(-4..4)
 
 			layout[row][:ornaments][slot] = ornament
 

@@ -13,20 +13,20 @@ $(document).ready(function() {
 		var variations = 1;
 		var name = "";
 		var caption = "Created after trying " + variations + " variations";
-		var description = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.";
+		var description = "The holiday season is finally here; wrapping up an amazing year. We'd like to share our joy with you, and thank you for all it is you do. So take a minute to celebrate with a holiday tree to decorate!";
 
-		if (variations >= 432) {
-			name = "I obcessed over this ...";
+		if (variations >= 400) {
+			name = "I won at life by obsessivly decorating this ornament.";
+		} else if (variations > 200) {
+			name = "Check out the absolutely perfect ornament I decorated!";
 		} else if (variations > 100) {
-			name = "I obcessed over this ...";
+			name = "I really like this ornament I made. Took a while to decide, but turned out great!";
 		} else if (variations > 50) {
-			name = "I obcessed over this ...";
+			name = "Check out the fun ornament I made!";
 		} else if (variations > 25) {
-			name = "I obcessed over this ...";
-		} else if (variations > 10) {
-			name = "I obcessed over this ...";
+			name = "I made a cool ornament - Check it out.";
 		} else if (variations >= 1) {
-			name = "I was lazy ...";
+			name = "I clicked on a button and then shared my ornament to Facebook. Yay.";
 		}
 
 		FB.ui({
@@ -43,9 +43,9 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var link = $(this).data('share-url');
-		var name = "Some kind of name";
-		var caption = "A neat ornament someone made";
-		var description = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.";
+		var name = "Check out this neat ornament!";
+		var caption = "Have yourself a merry little minute.";
+		var description = "The holiday season is finally here; wrapping up an amazing year. We'd like to share our joy with you, and thank you for all it is you do. So take a minute to celebrate with a holiday tree to decorate!";
 
 		FB.ui({
 			method: 'feed',

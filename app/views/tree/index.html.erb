@@ -18,7 +18,7 @@
 				<div class="ratio bounds_<%= index+1 %>" data-ratio="<%= row[:ratio] %>">
 					<% row[:ornaments].each do |ornament| %>
 					<% if ornament %>
-					<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_LARGE } %>
+					<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_SMALL } %>
 					<% end %>
 					<% end %>
 				</div>
