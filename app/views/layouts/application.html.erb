@@ -35,9 +35,13 @@
 
 	<!-- Facebook Meta -->
 	<meta property="fb:app_id" content="1402221250021254"/>
-	<meta property="og:url" content="JAMES TO DO"/>
+	<meta property="og:url" content="<%= request.original_url %>"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="/facebook_img.png"/>
+	<% if @ornament %>
+	<meta property="og:image" content="<%= "#{request.protocol}#{request.host_with_port}#{@ornament.composite_image_path}" %>"/>
+	<% else %>
+	<meta property="og:image" content="<%= "#{request.protocol}#{request.host_with_port}/facebook_img.png" %>"/>
+	<% end %>
 	<meta property="og:site_name" content="Happy Holidays from Moby!"/>
 	<meta property="og:title" content="Have yourself a merry little minute"/>
 	<meta property="og:description" content="The holiday season is finally here; wrapping up an amazing year. We'd like to share our joy with you, and thank you for all it is you do. So take a minute to celebrate with a holiday tree to decorate!"/>

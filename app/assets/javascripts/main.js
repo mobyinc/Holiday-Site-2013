@@ -19,14 +19,14 @@ $(document).ready(function() {
 	// snow settings
 	snowStorm.autoStart = false;
 	snowStorm.targetElement = 'wrapper';
-	snowStorm.flakesMax = 20;
-	snowStorm.flakesMaxActive = 20;
+	snowStorm.flakesMax = 30;
+	snowStorm.flakesMaxActive = 30;
 	snowStorm.followMouse = false;
 	snowStorm.useMeltEffect = false;
 	snowStorm.snowStick = false;
 	snowStorm.snowColor = '#a1c2d1';
-	snowStorm.vMaxX = 8;
-	snowStorm.vMaxY = 5;
+	snowStorm.vMaxX = 5;
+	snowStorm.vMaxY = 4;
 	snowStorm.excludeMobile = false;
 
 	// ajax setup

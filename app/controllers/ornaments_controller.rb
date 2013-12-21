@@ -1,6 +1,7 @@
 class OrnamentsController < ApplicationController
 	def create
 		ornament = Ornament.create!(ornament_params)
+		ornament.composite!
 
 		render json: {ornament_id: ornament.id}
 	end
