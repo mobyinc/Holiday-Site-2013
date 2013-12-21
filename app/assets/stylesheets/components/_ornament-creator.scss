@@ -17,16 +17,18 @@
 	#ornament_chooser {
 		position: relative;
 		z-index: 1;
-		margin-top: -(rs(20));
+		margin-top: -(rs(30));
 		text-align: center;
 		
 		@include respond-max($breakpoint-modal){
-			margin: 0 -(rs(30));
+			margin-left:-(rs(30));
+			margin-right:-(rs(30));
+			margin-top: -(rs(18));
 		}
 		
 		a {
 			position: absolute;
-			z-index: 1;
+			z-index: 2;
 		}
 		
 		.shape_left,
@@ -67,8 +69,8 @@
 			}
 			
 			@include respond-max($breakpoint-modal){
-				left: 30%;
-				top: 105%;
+				left: 20%;
+				top: 100%;
 			}
 		}
 		
@@ -82,13 +84,13 @@
 			}
 			
 			@include respond-max($breakpoint-modal){
-				right: 30%;
-				top: 105%;
+				right: 20%;
+				top: 100%;
 			}
 		}
 		
 		.ornament_detail {
-			margin: 0 !important;
+			margin: 0 -(rs(12)) !important;
 		}
 
 	}
@@ -99,8 +101,9 @@
 	#ornament_decorator {
 		position: relative;
 		z-index: 1;
-		margin-top: rs(35);
+		margin-top: rs(15);
 		margin-left: -(rs(30));
+		margin-right: -(rs(30));
 		@extend %clearfix;
 
 		#choose_patterns,
@@ -114,6 +117,8 @@
 			}
 			
 			h3 {
+				margin: 0;
+				line-height: 1;
 
 				a {
 					display: block;
@@ -135,14 +140,16 @@
 		}
 
 		ul {
-			margin: -(rs(20)) auto 0;
+			margin-top: -(rs(20));
+			margin-left: auto;
+			margin-right: auto;
 			width: rs(200);
 			padding: rs(24);
 			@extend .clearlist;
 			@extend %clearfix;
 
 			@include respond-max($breakpoint-modal){
-				width: rs(230);
+				width: rs(240);
 			}
 			
 			
@@ -152,7 +159,7 @@
 				height: rs(50);
 				
 				@include respond-max($breakpoint-modal){
-					margin: rs(3);
+					margin: rs(2) rs(5);
 				}
 				
 				a {
