@@ -15,6 +15,12 @@ function Workshop($container, $thanksTrigger, $modalTrigger, inviteId) {
 	this.$ornament = $container.find('.ornament_detail');
 	this.$rightShape = $container.find('.shape_right');
 
+	this.$patternsTab = $container.find('#choose_patterns');
+	this.$stickersTab = $container.find('#choose_stickers');
+	this.$patternsTabButton = $container.find('#patterns');
+	this.$stickersTabButton = $container.find('#stickers');
+	this.$activeTab = this.$patternsTab;
+
 	this.shapes = [
 		'ball',
 		'drop',
@@ -51,6 +57,7 @@ function Workshop($container, $thanksTrigger, $modalTrigger, inviteId) {
 		'sticker_12'
 	];
 
+	this.smallMode = false;
 	this.shapeIndex = 0;
 	this.shape = '';
 	this.pattern = this.patterns[0];
@@ -94,6 +101,53 @@ Workshop.prototype.initialize = function() {
 
 		self.save();
 	});
+
+	this.$patternsTabButton.on('click', function(e) {
+		e.preventDefault();
+		self.toggleActiveTab();
+	});
+
+	this.$stickersTabButton.on('click', function(e) {
+		e.preventDefault();
+		self.toggleActiveTab();
+	});
+
+	enquire.register("screen and (max-width: 33em)", {
+		match: function() {
+			self.switchSizeModeSmall(true);
+		},
+		unmatch: function() {
+			self.switchSizeModeSmall(false);
+		}
+	});
+};
+
+Workshop.prototype.switchSizeModeSmall = function(isSmall) {
+	this.smallMode = isSmall;
+
+	if (isSmall) {
+		this.setActiveTab(this.$activeTab);
+	} else {
+		this.$patternsTab.show();
+		this.$stickersTab.show();
+	}
+};
+
+Workshop.prototype.setActiveTab = function($tab) {
+	if (!this.smallMode) return;
+	
+	var $otherTab = $tab.attr('id') == this.$patternsTab.attr('id') ? this.$stickersTab : this.$patternsTab;
+	$tab.show();
+	$otherTab.hide();
+
+	this.$activeTab = $tab;
+};
+
+Workshop.prototype.toggleActiveTab = function() {
+	if (!this.smallMode) return;
+
+	var $newActiveTab = this.$activeTab.attr('id') == this.$patternsTab.attr('id') ? this.$stickersTab : this.$patternsTab;
+	this.setActiveTab($newActiveTab);
 };
 
 Workshop.prototype.selectPattern = function(index) {
@@ -150,7 +204,7 @@ Workshop.prototype.updatePreview = function() {
 	this.$leftShape.find('img').attr('src', this.getSideShapeUrl(-1));
 	this.$rightShape.find('img').attr('src', this.getSideShapeUrl(1));
 
-	this.variations++;  // ╯°□°）╯
+	this.variations++;  // ╯°o°）╯
 
 	console.log("variations: " + this.variations);
 };
