@@ -4,11 +4,11 @@ class TreeController < ApplicationController
 	def index
 		code = params[:code]		
 		@invite = Invite.find_by_code(code) if code
-		@layout = get_layout(25)			
+		@layout = get_layout(18)			
 	end
 
 	def show_create
-		@layout = get_layout(25)
+		@layout = get_layout(18)
 		@show_workshop = true
 
 		render 'index'
@@ -16,7 +16,7 @@ class TreeController < ApplicationController
 
 	def show		
 		@ornament = Ornament.find(params[:id])
-		@layout = get_layout(25, params[:id])
+		@layout = get_layout(18, params[:id])
 
 		render 'index'
 	end

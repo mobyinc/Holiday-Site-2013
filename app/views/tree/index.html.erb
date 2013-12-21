@@ -9,18 +9,25 @@
 <div id="wrapper">
 	<div id="tree">
 			<% if @invite %>
-			<h1><b>Happy Holidays</b> <span class="fittextHeight"><%= @invite.name %>!</span></h1>
+			<h1><b>Happy Holidays</b> <span id="invite_name" class="fittextHeight"><%= @invite.name %>!</span></h1>
 			<% else %>
 			<h1><b>Happy Holidays!</b></h1>
 			<% end %>			
 			<div id="ornaments">
 				<% @layout.each_with_index do |row, index| %>
 				<div class="ratio bounds_<%= index+1 %>" data-ratio="<%= row[:ratio] %>">
-					<% row[:ornaments].each do |ornament| %>
-					<% if ornament %>
-					<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_SMALL } %>
+					<% if index == 0 %>
+					<a id="my_ornament" href="#" class="ratio ornament" data-ratio="1" data-modal-id="ornament_details" data-id="1" style="left:21%; margin-top:-64%; display: none;">
+						<img class="pattern" src="/ornaments/drop/small/pattern_6.png">
+						<img class="sticker" src="/ornaments/drop/small/sticker_2.png">
+					</a>
 					<% end %>
-					<% end %>
+
+					<% row[:ornaments].each do |ornament| %>					
+						<% if ornament %>
+						<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_SMALL } %>
+						<% end %>
+					<% end %>		
 				</div>
 				<% end %>
 			</div>

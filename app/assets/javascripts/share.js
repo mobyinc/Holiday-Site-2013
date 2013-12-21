@@ -10,7 +10,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var link = $(this).data('share-url');
-		var variations = 1;
+		var variations = $(this).data('variations');
 		var name = "";
 		var caption = "Created after trying " + variations + " variations";
 		var description = "The holiday season is finally here; wrapping up an amazing year. We'd like to share our joy with you, and thank you for all it is you do. So take a minute to celebrate with a holiday tree to decorate!";

@@ -1,8 +1,10 @@
-function Workshop($container, $thanks_trigger, $modal_trigger, invite_id) {
+function Workshop($container, $thanksTrigger, $modalTrigger, inviteId) {
 	this.$container = $container;
-	this.$thanks_trigger = $thanks_trigger;
-	this.$modal_trigger = $modal_trigger;
-	this.invite_id = invite_id;
+	this.$thanksTrigger = $thanksTrigger;
+	this.$modalTrigger = $modalTrigger;
+	this.$myOrnament = $('#my_ornament');
+	this.$inviteName = $('#invite_name');
+	this.inviteId = inviteId;
 
 	this.$previous = $container.find('.prev');
 	this.$next = $container.find('.next');
@@ -141,6 +143,8 @@ Workshop.prototype.moveToShape = function(index) {
 };
 
 Workshop.prototype.updatePreview = function() {
+	this.$myOrnament.hide();
+
 	this.$ornament.find('img.pattern').attr('src', this.getPatternUrl());
 	this.$ornament.find('img.sticker').attr('src', this.getStickerUrl());
 	this.$leftShape.find('img').attr('src', this.getSideShapeUrl(-1));
@@ -151,13 +155,17 @@ Workshop.prototype.updatePreview = function() {
 	console.log("variations: " + this.variations);
 };
 
-Workshop.prototype.getPatternUrl = function() {
-	return "/ornaments/" + this.shape + "/large/" + this.pattern + ".png";
+Workshop.prototype.getPatternUrl = function(size) {
+	size = size || 'large';
+
+	return "/ornaments/" + this.shape + "/" + size + "/" + this.pattern + ".png";
 };
 
-Workshop.prototype.getStickerUrl = function() {
+Workshop.prototype.getStickerUrl = function(size) {
+	size = size || 'large';
+
 	if (this.sticker && this.sticker.length > 0) {
-		return "/ornaments/" + this.shape + "/large/" + this.sticker + ".png";
+		return "/ornaments/" + this.shape + "/" + size + "/" + this.sticker + ".png";
 	} else {
 		return "";
 	}
@@ -178,26 +186,32 @@ Workshop.prototype.getSideShapeUrl = function(delta) {
 	return url;
 };
 
-Workshop.prototype.setLoading = function() {
-	this.$cta.spin('button');
-	this.$saveButton.addClass('empty');
+Workshop.prototype.setLoading = function(isLoading) {
+	if (isLoading) {
+		this.$cta.spin('button');
+		this.$saveButton.addClass('empty');
+	} else {
+		this.$cta.spin(false);
+		this.$saveButton.removeClass('empty');
+	}
 };
 
 Workshop.prototype.close = function() {
-	this.$modal_trigger.trigger('modal.close');
+	this.setLoading(false);
+	this.$modalTrigger.trigger('modal.close');
 };
 
 Workshop.prototype.save = function() {
 	var self = this;
 
-	this.setLoading();
+	this.setLoading(true);
 
 	$.ajax({
 		url: '/ornaments',
 		type: 'POST',
 		data: {
 			ornament: {
-				invite_id: self.invite_id,
+				invite_id: self.inviteId,
 				shape: self.shape,
 				pattern: self.pattern,
 				sticker: self.sticker,
@@ -207,12 +221,10 @@ Workshop.prototype.save = function() {
 		success: function(response) {
 			self.close();
 
-			var ornament_id = response.ornament_id;
+			var ornamentId = response.ornament_id;
 
-			if (ornament_id && ornament_id > 0) {
-				setTimeout(function() {
-					self.$thanks_trigger.trigger('modal.open', '/ornaments/' + ornament_id + "/thanks_detail");
-				}, 1000);
+			if (ornamentId && ornamentId > 0) {
+				self.playHangOrnament(ornamentId);
 			} else {
 				alert("Oops, something went wrong.");
 			}
@@ -222,6 +234,24 @@ Workshop.prototype.save = function() {
 			alert("Oops, something went wrong.");
 		}
 	});
+};
+
+Workshop.prototype.playHangOrnament = function(ornamentId) {
+	var self = this;
+	var newUrl = '/ornaments/' + ornamentId;
+
+	window.scrollTo(0, 0);
+
+	this.$myOrnament.find('.pattern').attr('src', this.getPatternUrl('small'));
+	this.$myOrnament.find('.sticker').attr('src', this.getStickerUrl('small'));
+
+	this.$inviteName.fadeOut(0.25);
+	this.$myOrnament.show();
+
+	setTimeout(function() {
+		window.history.replaceState('Object', 'Happy Holidays!', newUrl);
+		self.$thanksTrigger.trigger('modal.open', newUrl + "/thanks_detail");
+	}, 2000);
 };
 
 
