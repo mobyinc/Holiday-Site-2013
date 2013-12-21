@@ -70,7 +70,7 @@
 			
 			@include respond-max($breakpoint-modal){
 				left: 20%;
-				top: 100%;
+				top: 95%;
 			}
 		}
 		
@@ -85,7 +85,7 @@
 			
 			@include respond-max($breakpoint-modal){
 				right: 20%;
-				top: 100%;
+				top: 95%;
 			}
 		}
 		
@@ -101,7 +101,7 @@
 	#ornament_decorator {
 		position: relative;
 		z-index: 1;
-		margin-top: rs(15);
+		margin-top: rs(8);
 		margin-left: -(rs(30));
 		margin-right: -(rs(30));
 		@extend %clearfix;
