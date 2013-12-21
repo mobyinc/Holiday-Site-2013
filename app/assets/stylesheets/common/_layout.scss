@@ -1,6 +1,9 @@
 /* Basic Page Structure & Backgrounds
 ---------------------------------------------------------------------- */
-	
+html {
+	background: $color-bkgrd-lighter;
+}
+
 body {
 	position: relative;
 	min-width: $base-site-width-min;
@@ -78,7 +81,7 @@ body {
 				bottom: 10%;
 				left: 0;
 				width: 100%;
-				height: 80%;
+				height: 100%;
 				@include linear-gradient(rgba($color-bkgrd,0), rgba($color-bkgrd,0.9));
 			}
 		}
