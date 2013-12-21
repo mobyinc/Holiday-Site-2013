@@ -13,12 +13,17 @@
  
 			return this.each(function() {
 				var o = options;
-				
-				$(this).on("click modal.open", function(e) {
+
+				$(this).on("click modal.open", function(e, remote_source) {
 					e.preventDefault();
 
 					var modalId = $(this).data("modal-id");
 					var $modal = $("#" + modalId);
+					var ajax_source = remote_source || o.ajax_source;
+
+					if (ajax_source) {
+						o.ajax_source = ajax_source;
+					}
 
 					$modal.on('click', function(e) {
 						// stop propigation in case nested in overlay
@@ -32,6 +37,10 @@
 					$modal.find(o.close_button).on("click", function() {
 						closeModal(modalId);
 					});
+
+					$(this).on('modal.close', function(e) {
+						closeModal(modalId);
+					});
 													
 					var modal_height = $modal.outerHeight();
 					var modal_width = $modal.outerWidth();
@@ -42,7 +51,7 @@
 					$modal.css({ display: 'block', opacity: 0 });
 					$modal.fadeTo(200, 1.0);
 
-					if (o.ajax_source) {
+					if (ajax_source) {
 						$content = $modal.find('.content');
 						$content.empty();
 

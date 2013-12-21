@@ -29,6 +29,13 @@ $(document).ready(function() {
 	snowStorm.vMaxY = 5;
 	snowStorm.excludeMobile = false;
 
+	// ajax setup
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
 	// fit text
 	$('.fittextHeight').each(function(index, val) {
 		$(this).fitToHeight({debug: false});
@@ -42,8 +49,9 @@ $(document).ready(function() {
 
 	// modals
 	$('#cta_decorate').niceModal();
+	$('#thanks_trigger').niceModal();
 	$('.ornament').each(function(index, el) {
-		$(this).niceModal({ ajax_source: '/ornament/' + $(this).data('id') + "/detail"});
+		$(this).niceModal({ ajax_source: '/ornaments/' + $(this).data('id') + "/detail"});
 	});
 
 	if (window.autoOpenOrnamentId > 0) {
@@ -54,15 +62,15 @@ $(document).ready(function() {
 	}
 
 	if (window.autoOpenWorkshop) {
-		var $target = $("#cta_decorate");
+		var $ctaTarget = $("#cta_decorate");
 
 		setTimeout(function() {
-			$target.trigger('modal.open');
+			$ctaTarget.trigger('modal.open');
 		}, 1000);
 	}
 
 	// workshop
-	var workshop = new Workshop($('#ornament_creator'));
+	var workshop = new Workshop($('#ornament_creator'), $('#thanks_trigger'), $('#cta_decorate'), window.invite_id);
 
 	// ratio scaling elements
 	$(window).resize(updateRatioElements);

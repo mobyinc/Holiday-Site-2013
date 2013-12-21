@@ -3,7 +3,7 @@
 	<%= image_tag ornament.pattern_image_path(Ornament::SIZE_LARGE), size: "310x310", class: "pattern" %>
 </div>
 
-<% if ornament.invite %>
+<% if ornament.invite && !thanks %>
 <div class="createdby named">
 	<h4 class="fittext"><%= ornament.invite.name %></h4>
 	<h5>after <b><%= ornament.variations %></b> variations</h5>
@@ -14,6 +14,11 @@
 </div>
 <% end %>
 
+<% if thanks %>
+<h4>Oh, That's Nice</h4>
+<p>Now that you've hung your beautiful ornament on our tree, why not spread a little holiday cheer and invite your friends to see this masterpiece?</p>
+<% end %>
+
 <div class="cta">
-	<a href="#" class="btn_share" data-share-url="<%= ornament_url @ornament %>"><span>Spread Cheer on Facebook &raquo;</span></a>
+	<a href="#" class="btn_share" data-variations="<%= @ornament.variations %>" data-share-url="<%= ornament_url @ornament %>"><span>Spread Cheer on Facebook &raquo;</span></a>
 </div>

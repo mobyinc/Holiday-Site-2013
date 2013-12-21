@@ -24,7 +24,13 @@ class TreeController < ApplicationController
 	def show_detail
 		@ornament = Ornament.find(params[:id])
 
-		render partial: 'ornament_detail', locals: { ornament: @ornament }
+		render partial: 'ornament_detail', locals: { ornament: @ornament, thanks: false }
+	end
+
+	def show_thanks_detail
+		@ornament = Ornament.find(params[:id])
+
+		render partial: 'ornament_detail', locals: { ornament: @ornament, thanks: true }
 	end
 
 	# helpers

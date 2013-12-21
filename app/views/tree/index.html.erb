@@ -2,6 +2,7 @@
   <script type="text/javascript">
   	window.autoOpenOrnamentId = <%= @ornament ? @ornament.id : 0 %>;
   	window.autoOpenWorkshop = <%= @show_workshop ? 'true' : 'false' %>;
+  	window.invite_id = <%= @invite ? @invite.id : 'null' %>;
   </script>
 <% end %>
 
@@ -58,7 +59,7 @@
 						<div id="choose_patterns">
 							<h3><a href="#patterns">Colors and Patterns</a></h3>
 							<ul>
-								<li><a href="#"><%= image_tag "decorate/pattern_1.png", alt: "white"%></a></li>
+								<li><a class="on" href="#"><%= image_tag "decorate/pattern_1.png", alt: "white"%></a></li>
 								<li><a href="#"><%= image_tag "decorate/pattern_2.png", alt: "blue"%></a></li>
 								<li><a href="#"><%= image_tag "decorate/pattern_3.png", alt: "yellow"%></a></li>
 								<li><a href="#"><%= image_tag "decorate/pattern_4.png", alt: "red"%></a></li>
@@ -99,22 +100,12 @@
 		<div class="ribbons"></div>
 	</div>
 
+	<a id="thanks_trigger" href="#" data-modal-id="ornament_thanks" style="display: none;"></a>
 	<div id="ornament_thanks" class="modal skinny" style="display:none;">
 		<h2>Thanks!</h2>
 		<div class="modal_bkgrd">
 			<div class="content">
-					<div class="ornament_detail">
-						<%= image_tag "/ornaments/drop/large/sticker_1.png", size: "310x310", class: "sticker"%>
-						<%= image_tag "/ornaments/drop/large/pattern_1.png", size: "310x310", class: "pattern"%>
-					</div>
-					<div class="createdby">
-						<h5>Created after <b>42</b> variations</h5>
-					</div>
-					<h4>Oh, That's Nice</h4>
-					<p>Now that you've hung your beautiful ornament on our tree, why not spread a little holiday cheer and invite your friends to see this masterpiece?</p>
-					<div class="cta">
-						<a href="#" class="btn_share"><span>Spread Cheer on Facebook &raquo;</span></a>
-					</div>
+				<!-- ajaxed -->
 			</div>
 		</div>
 		<a href="#" class="btn_close">Close</a>
@@ -123,7 +114,8 @@
 	
 	<div id="ornament_details" class="modal skinny" style="display:none;">
 		<div class="modal_bkgrd">
-			<div class="content">				
+			<div class="content">
+				<!-- ajaxed -->
 			</div>
 		</div>
 		<a href="#" class="btn_close">Close</a>

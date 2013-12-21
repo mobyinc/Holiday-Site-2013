@@ -1,5 +1,9 @@
-function Workshop($container) {
+function Workshop($container, $thanks_trigger, $modal_trigger, invite_id) {
 	this.$container = $container;
+	this.$thanks_trigger = $thanks_trigger;
+	this.$modal_trigger = $modal_trigger;
+	this.invite_id = invite_id;
+
 	this.$previous = $container.find('.prev');
 	this.$next = $container.find('.next');
 	this.$cta = $container.find('.cta');
@@ -86,18 +90,30 @@ Workshop.prototype.initialize = function() {
 	this.$saveButton.on('click', function(e) {
 		e.preventDefault();
 
-		self.setLoading();
+		self.save();
 	});
 };
 
 Workshop.prototype.selectPattern = function(index) {
 	this.pattern = this.patterns[index];
 
+	this.$container.find('#choose_patterns a').removeClass('on');
+	this.$container.find('#choose_patterns li').eq(index).find('a').addClass('on');
+
 	this.updatePreview();
 };
 
 Workshop.prototype.selectSticker = function(index) {
-	this.sticker = this.stickers[index];
+	var $button = this.$container.find('#choose_stickers li').eq(index).find('a');
+
+	if ($button.hasClass('on')) {
+		this.$container.find('#choose_stickers a').removeClass('on');
+		this.sticker = 'sticker_none';
+	} else {
+		this.$container.find('#choose_stickers a').removeClass('on');
+		$button.addClass('on');
+		this.sticker = this.stickers[index];
+	}
 
 	this.updatePreview();
 };
@@ -166,3 +182,47 @@ Workshop.prototype.setLoading = function() {
 	this.$cta.spin('button');
 	this.$saveButton.addClass('empty');
 };
+
+Workshop.prototype.close = function() {
+	this.$modal_trigger.trigger('modal.close');
+};
+
+Workshop.prototype.save = function() {
+	var self = this;
+
+	this.setLoading();
+
+	$.ajax({
+		url: '/ornaments',
+		type: 'POST',
+		data: {
+			ornament: {
+				invite_id: self.invite_id,
+				shape: self.shape,
+				pattern: self.pattern,
+				sticker: self.sticker,
+				variations: self.variations
+			}
+		},
+		success: function(response) {
+			self.close();
+
+			var ornament_id = response.ornament_id;
+
+			if (ornament_id && ornament_id > 0) {
+				setTimeout(function() {
+					self.$thanks_trigger.trigger('modal.open', '/ornaments/' + ornament_id + "/thanks_detail");
+				}, 1000);
+			} else {
+				alert("Oops, something went wrong.");
+			}
+		},
+		error: function(response) {
+			self.close();
+			alert("Oops, something went wrong.");
+		}
+	});
+};
+
+
+
