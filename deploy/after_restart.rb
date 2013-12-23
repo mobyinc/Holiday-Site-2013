@@ -1,0 +1,1 @@
+run "cd #{current_path}/public/ornaments; rm -rf composite; ln -s /data/HolidaySite/shared/composite ./composite"
