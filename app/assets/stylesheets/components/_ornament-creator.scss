@@ -188,10 +188,10 @@
 		#choose_patterns {
 			
 			h3 a {
-				@include retina-image(decorate/patterns_banner, 230px 82px);
+				@include retina-image(decorate/patterns_banner, rs(230) rs(82));
 				
 				@include respond-max($breakpoint-modal){
-					@include retina-image(decorate/patterns_banner-on, 300px 93px);
+					@include retina-image(decorate/patterns_banner-on, rs(300) rs(93));
 				}
 			}
 			
@@ -199,7 +199,7 @@
 				@include retina-image(decorate/patterns_bkgrd, 100% 100%);
 				
 				li a.on:before {
-					@include retina-image(decorate/pattern_on, 50px 50px);
+					@include retina-image(decorate/pattern_on, rs(50) rs(50));
 				}
 			}
 		}
@@ -209,10 +209,10 @@
 		#choose_stickers {
 			
 			h3 a {
-				@include retina-image(decorate/stickers_banner, 230px 82px);
+				@include retina-image(decorate/stickers_banner, rs(230) rs(82));
 			
 				@include respond-max($breakpoint-modal){
-					@include retina-image(decorate/stickers_banner-on, 300px 93px);
+					@include retina-image(decorate/stickers_banner-on, rs(300) rs(93));
 				}
 			}
 			
@@ -220,7 +220,7 @@
 				@include retina-image(decorate/stickers_bkgrd, 100% 100%);
 				
 				li a.on:before {
-					@include retina-image(decorate/sticker_on, 50px 50px);
+					@include retina-image(decorate/sticker_on, rs(50) rs(50));
 				}
 			}
 		}	

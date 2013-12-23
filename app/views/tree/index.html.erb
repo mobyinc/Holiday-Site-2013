@@ -23,6 +23,12 @@
 					</a>
 					<% end %>
 
+					<% if index == 8 %>
+					<a id="btn_reload" href="#" class="ratio ornament" data-ratio="1" style="left:95%;margin-top:-8%;">
+						<%= image_tag "btn_refresh.png", alt: "Refresh Tree"%>
+					</a>
+					<% end %>
+
 					<% row[:ornaments].each do |ornament| %>					
 						<% if ornament %>
 						<%= render partial: 'ornament', locals: { ornament: ornament, size: Ornament::SIZE_SMALL } %>

@@ -51,7 +51,7 @@ $border-height: rs(49);
 		.modal_bkgrd {
 			position: relative;
 			z-index: 1;
-			@include retina-image(modal, 600px 800px);
+			@include retina-image(modal, rs(600) rs(800));
 			background-position: left top;
 		
 			&:after {
@@ -62,7 +62,7 @@ $border-height: rs(49);
 				right: -($border-width);
 				width: $border-width;
 				height: 100%;
-				@include retina-image(modal, 600px 800px);
+				@include retina-image(modal, rs(600) rs(800));
 				background-position: right top;
 			}
 			
@@ -81,7 +81,7 @@ $border-height: rs(49);
 					bottom: -($border-height);
 					width: 100%;
 					height: $border-height;
-					@include retina-image(modal, 600px 800px);
+					@include retina-image(modal, rs(600) rs(800));
 					background-position: left bottom;
 				}
 				
@@ -93,7 +93,7 @@ $border-height: rs(49);
 					bottom: -($border-height);
 					width: $border-width;
 					height: $border-height;
-					@include retina-image(modal, 600px 800px);
+					@include retina-image(modal, rs(600) rs(800));
 					background-position: right bottom;
 				}
 			}
