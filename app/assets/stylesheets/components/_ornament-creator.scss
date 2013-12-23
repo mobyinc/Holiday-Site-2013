@@ -64,8 +64,9 @@
 		.prev {
 			left: 8%;
 
-			&:active {
-				background-position: 0 -(rs(50));
+			&:active,
+			&.hover {
+				background-position-y: -(rs(50));
 			}
 			
 			@include respond-max($breakpoint-modal){
@@ -79,8 +80,9 @@
 			
 			background-position: -(rs(45)) 0;
 			
-			&:active {
-				background-position: -(rs(45)) -(rs(50));
+			&:active,
+			&.hover {
+				background-position-y: -(rs(50));
 			}
 			
 			@include respond-max($breakpoint-modal){
@@ -166,7 +168,8 @@
 					position: relative;
 					display: block;
 					
-					&.on:before {
+					&.on:before,
+					&.hover:before {
 						content: "";
 						position: absolute;
 						z-index: 1;
@@ -198,7 +201,8 @@
 			ul {
 				@include retina-image(decorate/patterns_bkgrd, 100% 100%);
 				
-				li a.on:before {
+				li a.on:before,
+				li a.hover:before {
 					@include retina-image(decorate/pattern_on, rs(50) rs(50));
 				}
 			}
@@ -219,7 +223,8 @@
 			ul {
 				@include retina-image(decorate/stickers_bkgrd, 100% 100%);
 				
-				li a.on:before {
+				li a.on:before,
+				li a.hover:before {
 					@include retina-image(decorate/sticker_on, rs(50) rs(50));
 				}
 			}

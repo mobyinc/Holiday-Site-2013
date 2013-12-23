@@ -24,7 +24,7 @@
 		
 		@include prefixer(transition, all 0.2s ease-in-out, webkit moz ms o spec);
 				
-		&:hover {
+		&.hover {
 			@include transform(rotate(-3deg));
 			@include transform-origin(left center);
 		}

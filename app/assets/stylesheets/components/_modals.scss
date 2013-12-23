@@ -199,6 +199,13 @@ $border-height: rs(49);
 			width: rs(40);
 			@include retina-image(btn_close, rs(40) rs(40));
 			
+			@include prefixer(transition, all 0.2s ease-in-out, webkit moz ms o spec);
+				
+			&.hover {
+				@include transform(rotate(-8deg));
+				@include transform-origin(center top);
+			}
+			
 			&:active {
 				margin-top: rs(2);
 			}
@@ -247,6 +254,13 @@ $border-height: rs(49);
 	
 			span {
 				@extend %hide-txt;
+			}
+			
+			@include prefixer(transition, all 0.2s ease-in-out, webkit moz ms o spec);
+				
+			&.hover {
+				@include transform(rotate(-3deg));
+				@include transform-origin(center center);
 			}
 		}
 		
