@@ -1,4 +1,12 @@
 $(document).ready(function() {
+	// reload tree
+	$('#btn_reload').on('click', function(e) {
+		e.preventDefault();
+
+		window.history.replaceState('Object', 'Happy Holidays!', "/");
+		window.location.reload();
+	});
+
 	// build tree animation
 	$('.ornament').css({ opacity: 0 });
 

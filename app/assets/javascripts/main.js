@@ -16,6 +16,11 @@
 //= require_directory .
 
 $(document).ready(function() {
+	// Detect if we're in a touch environment
+	window.App = {};
+
+	App.touch = 'ontouchstart' in document.documentElement;
+
 	// snow settings
 	snowStorm.autoStart = false;
 	snowStorm.targetElement = 'wrapper';
@@ -87,6 +92,21 @@ $(document).ready(function() {
 			updateRatioElements();
 		}
 	});
+
+	function addHovers($elements) {
+		debugger;
+		if (App.touch) {
+			$elements.addClass('no-hover');
+		} else {
+			$elements.hover(function() {
+				$(this).addClass('hover');
+			}, function() {
+				$(this).removeClass('hover');
+			});
+		}
+	}
+
+	addHovers($('a'));
 
 	function updateRatioElements(e) {
 		$('.ratio').each(adjustRatioWidth);
