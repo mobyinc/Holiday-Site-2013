@@ -242,7 +242,8 @@ $border-height: rs(49);
 				position: absolute !important;
 				left: 50% !important;
 				top: 50% !important;
-				margin-top: rs(15);
+				margin-top: rs(15) !important;
+				margin-left: 0 !important;
 			}
 		}
 
