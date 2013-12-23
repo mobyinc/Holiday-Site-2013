@@ -8,10 +8,10 @@ $(document).ready(function() {
 	});
 
 	// build tree animation
-	$('.ornament').css({ opacity: 0 });
+	$('.ornament').not('#btn_reload').css({ opacity: 0 });
 
 	setTimeout(function() {
-		var $randomizedOrnaments = $('.ornament').sort( function(){ return ( Math.round( Math.random() ) - 0.5 ); } );
+		var $randomizedOrnaments = $('.ornament').not('#btn_reload').sort( function(){ return ( Math.round( Math.random() ) - 0.5 ); } );
 
 		$randomizedOrnaments.each(function(index, el) {
 			$target = $(el);
@@ -21,9 +21,27 @@ $(document).ready(function() {
 		});
 	}, 1000);
 
+	if (!App.touch) {
+		$('.ornament').hover(function() {
+			var $target = $(this);
+			$target.removeClass('jiggle');
+			setTimeout(function(e) {
+				$target.addClass('jiggle');
+			},10);
+		}, function() {
+			
+		});
+	}
+
 	function animateOrnament($ornament, delay) {
 		setTimeout(function() {
 			$ornament.addClass('fadeInDownBounce');
+
+			setTimeout(function() {
+				$ornament.css({opacity: 1});
+				$ornament.removeClass('fadeInDownBounce');
+			}, 1000);
+			
 		}, delay);
 	}
 });

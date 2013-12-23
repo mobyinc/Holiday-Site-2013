@@ -15,11 +15,11 @@
 //= require_directory ./libs
 //= require_directory .
 
-$(document).ready(function() {
-	// Detect if we're in a touch environment
-	window.App = {};
+window.App = {};
+App.touch = 'ontouchstart' in document.documentElement;
 
-	App.touch = 'ontouchstart' in document.documentElement;
+$(document).ready(function() {
+	// Detect if we're in a touch environment	
 
 	// snow settings
 	snowStorm.autoStart = false;
@@ -94,7 +94,6 @@ $(document).ready(function() {
 	});
 
 	function addHovers($elements) {
-		debugger;
 		if (App.touch) {
 			$elements.addClass('no-hover');
 		} else {
@@ -106,7 +105,7 @@ $(document).ready(function() {
 		}
 	}
 
-	addHovers($('a'));
+	addHovers($('a').not('.ornament'));
 
 	function updateRatioElements(e) {
 		$('.ratio').each(adjustRatioWidth);

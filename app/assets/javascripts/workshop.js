@@ -6,8 +6,8 @@ function Workshop($container, $thanksTrigger, $modalTrigger, inviteId) {
 	this.$inviteName = $('#invite_name');
 	this.inviteId = inviteId;
 
-	this.$previous = $container.find('.prev');
-	this.$next = $container.find('.next');
+	this.$previous = $container.find('.prev, .shape_left');
+	this.$next = $container.find('.next, .shape_right');
 	this.$cta = $container.find('.cta');
 	this.$saveButton = $container.find('.btn_hang');
 

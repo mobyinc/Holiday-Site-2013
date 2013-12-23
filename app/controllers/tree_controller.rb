@@ -81,7 +81,7 @@ class TreeController < ApplicationController
 
 			ornament.row = row
 			ornament.slot = slot
-			ornament.top = rand(-20..20)
+			ornament.top = rand(-25..25)
 
 			min_left = -10
 			max_left = 90

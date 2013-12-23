@@ -30,15 +30,18 @@
 						e.stopPropagation();
 					});
 
-					$overlay.on("click", function() {
+					$overlay.on("click", function(e) {
+						e.preventDefault();
 						closeModal(modalId);
 					});
 								
-					$modal.find(o.close_button).on("click", function() {
+					$modal.find(o.close_button).on("click", function(e) {
+						e.preventDefault();
 						closeModal(modalId);
 					});
 
 					$(this).on('modal.close', function(e) {
+						e.preventDefault();
 						closeModal(modalId);
 					});
 													
