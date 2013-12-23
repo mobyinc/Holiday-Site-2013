@@ -1,5 +1,5 @@
 class Ornament < ActiveRecord::Base
-	require "rmagick"
+	require "RMagick"
 
 	attr_accessor :top
 	attr_accessor :left
