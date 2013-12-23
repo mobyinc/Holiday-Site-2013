@@ -57,10 +57,11 @@
 					if (ajax_source) {
 						$content = $modal.find('.content');
 						$content.empty();
+						$content.spin('small');
 
-						// loading indicator
-
-						$content.load(o.ajax_source);
+						$content.load(o.ajax_source, function() {
+							$content.spin(false);
+						});
 					}
 				});
 			});

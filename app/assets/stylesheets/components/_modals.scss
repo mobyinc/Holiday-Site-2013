@@ -95,6 +95,14 @@ $border-height: rs(49);
 					height: $border-height;
 					@include retina-image(modal, rs(600) rs(800));
 					background-position: right bottom;
+				}				
+
+				.spinner {
+					position: absolute !important;
+					left: 50% !important;
+					top: 50% !important;
+					margin-left: rs(30);
+					margin-top: rs(20);
 				}
 			}
 		}

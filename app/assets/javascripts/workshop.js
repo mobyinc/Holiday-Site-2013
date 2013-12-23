@@ -300,6 +300,7 @@ Workshop.prototype.playHangOrnament = function(ornamentId) {
 	this.$myOrnament.find('.sticker').attr('src', this.getStickerUrl('small'));
 
 	this.$inviteName.fadeOut(0.25);
+	this.$myOrnament.addClass('jiggle');
 	this.$myOrnament.show();
 
 	setTimeout(function() {

@@ -11,13 +11,21 @@ $(document).ready(function() {
 	$('.ornament').not('#btn_reload').css({ opacity: 0 });
 
 	setTimeout(function() {
-		var $randomizedOrnaments = $('.ornament').not('#btn_reload').sort( function(){ return ( Math.round( Math.random() ) - 0.5 ); } );
+		$('#tree').waitForImages({
+			finished: function() {
+				var $randomizedOrnaments = $('.ornament').not('#btn_reload').sort( function(){ return ( Math.round( Math.random() ) - 0.5 ); } );
 
-		$randomizedOrnaments.each(function(index, el) {
-			$target = $(el);
-			var delay = index * 50;
-			
-			animateOrnament($target, delay);
+				$randomizedOrnaments.each(function(index, el) {
+					$target = $(el);
+					var delay = index * 50;
+					
+					animateOrnament($target, delay);
+				});
+			},
+			each: function(loaded, count, success) {
+				console.log('loaded ' + loaded);
+			},
+			waitForAll: true
 		});
 	}, 1000);
 
