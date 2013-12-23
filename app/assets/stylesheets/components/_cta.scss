@@ -52,18 +52,18 @@
 	
 	@include respond-max($breakpoint-mid){
 		left: 50%;
-		bottom: -4%;
-		height: 22%;
+		bottom: 0%;
+		height: 20%;
 		
 		a {
 			left: 48%;
-			width: 46%;
-			height: 54%;
+			width: 50%;
+			height: 58%;
 			background-image: image-url('cta_tag-smaller.png');
 		}
 		
 		.cta-ornament {
-			top:-12%;
+			top:-4%;
 			left: 9%;
 			width: 44%;
 			height: 100%;

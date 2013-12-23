@@ -25,7 +25,7 @@ $border-height: rs(49);
 		@include box-sizing;
 		position: absolute;
 		z-index: 1;
-		top:15%;
+		top:10%;
 		left: 50%;
 		padding-right: $border-width;
 		color: #000;
@@ -44,6 +44,11 @@ $border-height: rs(49);
 			width: rs(326);
 			margin: 0 0 0 -(rs(163));
 		}
+		
+		@include respond-max(33em){
+			top:0;
+		}
+		
 		
 		// Candy Cane Box
 		// ==============
@@ -137,7 +142,7 @@ $border-height: rs(49);
 		h2 {
 			position: absolute;
 			z-index: 2;
-			top: -(rs(58));
+			top: 0;
 			left: rs(4);
 			width: rs(540);
 			font-size: rs(16);
@@ -178,7 +183,7 @@ $border-height: rs(49);
 		.ribbons {
 			position: absolute;
 			z-index: 0;
-			top: -(rs(26));
+			top: (rs(32));
 			left:-(rs(160));
 			width: 100%;
 			padding: 0 rs(160);
@@ -191,6 +196,10 @@ $border-height: rs(49);
 				background-image: image-url('banner/under-left@2x.png'), image-url('banner/under-right@2x.png');
 				background-size: rs(168) rs(137);
 			}
+		}
+		
+		h2 + .modal_bkgrd {
+			margin-top: (rs(58));
 		}
 		
 		// Close Button
@@ -220,7 +229,7 @@ $border-height: rs(49);
 		}
 		
 		h2 + .modal_bkgrd + .btn_close {
-			top:rs(42);
+			top:rs(100);
 		}
 		
 		// CTA area
