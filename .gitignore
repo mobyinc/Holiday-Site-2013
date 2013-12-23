@@ -20,4 +20,4 @@ config/initializers/secret_token.rb
 
 .DS_Store
 
-/public/ornaments/composite/
+/public/ornaments/composite/*.png
