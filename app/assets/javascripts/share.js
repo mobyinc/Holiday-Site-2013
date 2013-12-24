@@ -15,15 +15,15 @@ $(document).ready(function() {
 		var caption = "Created after trying " + variations + " variations";
 		var description = "The holiday season is finally here; wrapping up an amazing year. We'd like to share our joy with you, and thank you for all it is you do. So take a minute to celebrate with a holiday tree to decorate!";
 
-		if (variations >= 400) {
+		if (variations >= 75) {
 			name = "I won at life by obsessivly decorating this ornament.";
-		} else if (variations > 200) {
-			name = "Check out the absolutely perfect ornament I decorated!";
-		} else if (variations > 100) {
-			name = "I really like this ornament I made. Took a while to decide, but turned out great!";
 		} else if (variations > 50) {
+			name = "Check out the absolutely perfect ornament I decorated!";
+		} else if (variations > 20) {
+			name = "I really like this ornament I made. Took a while to decide, but turned out great!";
+		} else if (variations > 10) {
 			name = "Check out the fun ornament I made!";
-		} else if (variations > 25) {
+		} else if (variations > 5) {
 			name = "I made a cool ornament - Check it out.";
 		} else if (variations >= 1) {
 			name = "I clicked on a button and then shared my ornament to Facebook. Yay.";
