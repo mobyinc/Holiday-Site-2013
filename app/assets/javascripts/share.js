@@ -35,7 +35,7 @@ $(document).ready(function() {
 			name: name,
 			caption: caption,
 			description: description,
-			actions: [{name:'create your own', link:'http://holiday.bymoby.com/create'}]
+			actions: [{name:'create your own', link:'http://holiday.mobyinc.com/create'}]
 		}, function(response){});
 	});
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			name: name,
 			caption: caption,
 			description: description,
-			actions: [{name:'create your own', link:'http://holiday.bymoby.com/create'}]
+			actions: [{name:'create your own', link:'http://holiday.mobyinc.com/create'}]
 		}, function(response){});
 	});
 });
